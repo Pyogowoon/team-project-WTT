@@ -81,11 +81,10 @@
     <br/>
       <br/>
  
- # 3. DB설계
  
  
  
- # 4. 본인 구현 기능 사진
+ # 3. 본인 구현 기능 사진
  
  > 본인이 구현한 기능 사진 입니다.
  
@@ -201,7 +200,7 @@
  
   <br/>
  
-  # 5. 기능 하이라이트
+  # 4. 기능 하이라이트
    
  > 본인이 구현한 기능 중 중요하다고 생각한 코드를 설명과 함께 적었습니다.
   
@@ -330,6 +329,102 @@
  
  <br/>
   <br/>
+  
+  
+  ## 2. 회원가입 시 AES (복호화)
+   > 회원가입 시 보안을 위해서 AES를 구현했습니다.
+   
+   - UserService
+   
+ 
+   ```java
+   
+  
+   public boolean insert(UserVo vo) {
+   
+	 boolean b = true;
+		try {
+		
+			String pwd = aes.enc(vo.getPwd());
+			vo.setPwd(pwd);
+			status =transaction.getTransaction(new DefaultTransactionDefinition());
+			Mapper.insert(vo);
+			transaction.commit(status);
+		
+		}catch(Exception ex) {
+			ex.printStackTrace();
+			b=false;
+		}
+		return b;
+	}  
+	
+   ```
+   
+  > boolean 으로 return 받고 비밀번호는 AES처리 했으며 Transaction 의 과정도 거침 
+	
+<br/>
+	 
+- AES
+	
+```java
+	
+	
+public class AES {
+	String iv;
+	Key keySpec;
+	final static String key="12345678901234567890";
+	
+	public AES() {
+		try {
+			iv = key.substring(0,16);
+			byte[] keyBytes = new byte[16];
+			byte[] b= key.getBytes("utf-8");
+			int len = b.length;
+			if(len>keyBytes.length) len = keyBytes.length;
+			
+			System.arraycopy(b, 0, keyBytes, 0, len);
+			SecretKeySpec keySpec = new SecretKeySpec(keyBytes, "AES");
+			this.keySpec = keySpec;
+		}catch(Exception ex) {
+			ex.printStackTrace();
+		}
+	}
+	
+	public String enc(String str) {
+		String encStr = "";
+		try {
+			Cipher c = Cipher.getInstance("AES/CBC/PKCS5Padding");
+			c.init(Cipher.ENCRYPT_MODE, keySpec, new IvParameterSpec(iv.getBytes()));
+			byte[] encrypted = c.doFinal(str.getBytes("utf-8"));
+			encStr = new String(Base64.encodeBase64(encrypted));
+		}catch(Exception ex) {
+			ex.printStackTrace();
+		}
+		return encStr;
+	}
+	
+	public String dec(String str) {
+		String decStr = "";
+		try {
+			Cipher c = Cipher.getInstance("AES/CBC/PKCS5Padding");
+			c.init(Cipher.DECRYPT_MODE, keySpec, new IvParameterSpec(iv.getBytes()));
+			byte[] byteStr = Base64.decodeBase64(str.getBytes());
+			decStr = new String(c.doFinal(byteStr), "utf-8");
+		}catch(Exception ex) {
+			ex.printStackTrace();
+		}
+		return decStr;
+	}
+	
+	
+	
+}
+	
+```
+> AES를 통해 복호화 하고자 함
+	
+- UserMapper
+	
 
  </details>
  
