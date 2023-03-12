@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace='com.prec.mybatis.MadMapper'>
+
+	<select id='totSize' parameterType='com.prec.bean.ManagerPage' resultType='Integer'>
+		select count(sno) from ad 
+		where	dSno like '%${findStr}%' or title like '%${findStr}%'
+		or pInfo like '%${findStr}%' or pName like '%${findStr}%' or pActor like '%${findStr}%'
+		or pCat like '%${findStr}%'
+	</select>
+	<select id='adSelect' parameterType='com.prec.bean.ManagerPage' resultType='com.prec.ad.MadVo'>
+		select sno,dSno,dSeason,dEp,title,pCat,pInfo,pName,pImg,pUrl,pTime,pActor from ad
+		where	dSno like '%${findStr}%' or title like '%${findStr}%'
+		or pInfo like '%${findStr}%' or pName like '%${findStr}%' or pActor like '%${findStr}%'
+		or pCat like '%${findStr}%'
+		order by ${listAlign}
+		limit ${startNo},${listSize}
+	</select>
+	<select id="getSno" resultType="Integer">
+		select max(sno) from ad
+	</select>
+	<select id='adView' parameterType="Integer" resultType="com.prec.ad.MadVo">
+		select a.sno, dSno,pImg,sysFile,oriFile,pCat,pInfo,pName,pUrl,pTime,pActor
+		from ad a left join adAtt a1 on a.sno = a1.aSno 
+		where dSno=#{_parameter}
+	</select>
+	<select id='adAttView' parameterType="Integer" resultType="com.prec.ad.AdAtt">
+		select sno,aSno,sysFile,oriFile
+		from adAtt
+		where aSno=#{_parameter}
+	</select>
+	
+	<insert id="adInsert" parameterType="com.prec.ad.MadVo">
+		insert into ad(dSno, dSeason, dEp, title, pCat,pInfo, pName, pUrl,pTime,pActor)
+		values (#{dSno},#{dSeason},#{dEp},#{title},#{pCat},#{pInfo},#{pName},#{pUrl},#{pTime},#{pActor} )
+	</insert>
+	<insert id="adAttInsert" parameterType="com.prec.ad.AdAtt">
+		insert into adAtt(aSno,oriFile,sysFile) values
+		<foreach collection="list" item='vo' separator=",">
+			(#{vo.aSno}, #{vo.oriFile},#{vo.sysFile})
+		</foreach>
+	</insert>
+	
+	<update id="adFileNameModify" parameterType="com.prec.ad.AdAtt">
+		update ad set pImg=#{oriFile}
+		where sno = ${aSno}
+	</update>
+	<update id="adModify" parameterType="com.prec.ad.MadVo">
+		update ad set pCat=#{pCat}, pInfo=#{pInfo}, pName=#{pName}, pUrl=#{pUrl}, pTime=#{pTime},pActor=#{pActor}
+		where sno = ${sno}
+	</update>
+	<update id='adAttModify' parameterType="com.prec.ad.AdAtt">
+		update adAtt set oriFile = #{oriFile}, sysFile = #{sysFile}
+		where aSno = ${aSno}
+	</update>
+	
+	<delete id='adDelete' parameterType='Integer'>
+		delete from ad 
+		<where>
+			<foreach collection="list" item='sno' separator="or">
+				sno=#{sno}
+			</foreach>
+		</where>
+	</delete>
+	<delete id='adAttDelete' parameterType='Integer'>
+		delete from adAtt 
+		<where>
+			<foreach collection="list" item='aSno' separator="or">
+				aSno=#{aSno}
+			</foreach>
+		</where>
+	</delete>
+	<delete id='adDeleteAll' parameterType='Integer'>
+		delete from ad
+		<where>
+			<foreach collection='list' item='sno' separator="or" >
+				sno = ${sno}
+			</foreach> 
+		</where>
+	</delete>
+	<delete id='adAttDeleteAll' parameterType='Integer'>
+		delete from adAtt
+		<where>
+			<foreach collection='list' item='aSno' separator="or">
+				aSno = ${aSno}
+			</foreach> 
+		</where>
+	</delete>
+</mapper>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.prec.mybatis.UserMapper">
+
+<select id="login" parameterType="com.prec.user.UserVo" resultType="com.prec.user.UserVo">
+ select * from user where email=#{email} and pwd=#{pwd} 
+</select>
+<select id="selectOne" parameterType="String" resultType="com.prec.user.UserVo">
+select * from user where id =#{_paramter}
+</select>
+
+<insert id="insert" parameterType="com.prec.user.UserVo">
+insert into user(email,pwd,uName, phone, nick) 
+	values(#{email}, #{pwd}, #{uName}, #{phone}, #{nick})
+</insert>
+
+<select id="idCheck" resultType="int">
+	
+	select count(*) from user where email = #{email}
+
+</select>
+
+<select id="findPwd" parameterType="com.prec.user.UserVo" resultType="String">
+ select pwd from user where email=#{email} and email=#{email}
+  </select> 
+
+
+
+
+</mapper>

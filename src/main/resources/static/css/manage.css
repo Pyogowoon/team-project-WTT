@@ -1,0 +1,379 @@
+@charset "UTF-8";
+
+#signout_reason{
+	box-sizing : border-box;
+	padding : 40px;
+}
+
+#signout_reason>.frm_signout_reason>.signout_reason_list{
+	margin : 40px 20px;
+}
+
+#signout_reason>.frm_signout_reason>.signout_reason_list>.signout_reason_item{
+	margin : 10px;
+}
+
+#signout_reason>.frm_signout_reason>.signout_reason_list>.signout_reason_item>span{
+	margin-left : 40px;
+}
+
+/*--------------------------------------------------------------------------------*/
+
+#manage_muny{
+	box-sizing : border-box;
+	padding : 60px;
+	padding-left : 200px;
+}
+
+#manage_muny>.frm_manage_muny>.manage_muny_frame{
+	width : 600px;
+	height : 400px;
+	margin-left : 40px;
+	border : 1px solid #fff;
+	border-radius : 10px;
+	box-sizing : border-box;
+	padding : 20px;
+}
+
+#manage_muny>.frm_manage_muny>.manage_muny_frame>.manage_muny_title{
+	border-bottom : 3px solid #fff;
+	margin-bottom : 10px;
+	font-size : 18px;
+}
+
+#manage_muny>.frm_manage_muny>.manage_muny_frame>.manage_muny_paging{
+	text-align : center;
+	margin-top : 15px;
+}
+
+#manage_muny>.frm_manage_muny>.manage_muny_frame>button{
+	width : 50px;
+	height : 30px;
+	background-color : #fff;
+	border-radius : 10px;
+	margin-left : 500px;
+}
+
+#manage_muny>.frm_manage_muny>.manage_muny_frame span{
+	width : 45px;
+	display : inline-block;
+}
+
+#manage_muny>.frm_manage_muny>.manage_muny_frame .subject{width : 300px;}
+#manage_muny>.frm_manage_muny>.manage_muny_frame .uName{width : 100px;}
+#manage_muny>.frm_manage_muny>.manage_muny_frame .rSno{width : 80px;}
+
+/*--------------------------------------------------------------------------------*/
+
+#manage_FAQ{
+	box-sizing : border-box;
+	padding : 60px;
+	padding-left : 200px;
+}
+
+#manage_FAQ>.frm_manage_FAQ>.manage_FAQ_frame{
+	width : 600px;
+	height : 400px;
+	margin-left : 40px;
+	border : 1px solid #fff;
+	border-radius : 10px;
+	box-sizing : border-box;
+	padding : 20px;
+}
+
+#manage_FAQ>.frm_manage_FAQ>.manage_FAQ_frame>.manage_FAQ_title{
+	border-bottom : 3px solid #fff;
+	margin-bottom : 10px;
+	font-size : 18px;
+}
+
+#manage_FAQ>.frm_manage_FAQ>.manage_FAQ_frame>.manage_FAQ_paging{
+	text-align : center;
+	margin-top : 15px;
+}
+
+#manage_FAQ>.frm_manage_FAQ>.manage_FAQ_frame>.btnManageFAQInsert{
+	margin-left : 400px;
+}
+
+#manage_FAQ>.frm_manage_FAQ>.manage_FAQ_frame>button{
+	width : 50px;
+	height : 30px;
+	background-color : #fff;
+	border-radius : 10px;
+	margin-left : 30px;
+}
+
+#manage_FAQ>.frm_manage_FAQ>.manage_FAQ_frame span{
+	width : 45px;
+	display : inline-block;
+}
+
+#manage_FAQ>.frm_manage_FAQ>.manage_FAQ_frame .FAQ_category{width : 100px;}
+#manage_FAQ>.frm_manage_FAQ>.manage_FAQ_frame .subject{width : 300px;}
+#manage_FAQ>.frm_manage_FAQ>.manage_FAQ_frame .doc{width : 80px;}
+
+
+/*----------------------------------------------------------------------------------*/
+
+#manage_muny_view{
+	box-sizing : border-box;
+	color : #000;
+	padding : 50px 20px;
+	overflow : auto;
+}
+
+#manage_muny_view>.frm_manage_muny_view>.manage_muny_view_frame{
+	margin : 10px auto;
+	width : 900px;
+	border : 1px solid #fff;
+	border-radius : 15px;
+	min-height : 700px;
+	box-sizing : border-box;
+	padding : 0 40px;
+}
+
+#manage_muny_view>.frm_manage_muny_view>.manage_muny_view_frame>h1{
+	margin-bottom : 50px;
+	color : #fff;
+}
+
+#manage_muny_view>.frm_manage_muny_view>.manage_muny_view_frame>label{
+	display : inline-block;
+	width : 50px;
+	margin-left : 40px;
+	color : #fff;
+}
+
+#manage_muny_view>.frm_manage_muny_view>.manage_muny_view_frame>.muny_doc{
+	width : 100%;
+	min-height : 340px;
+	border-radius : 5px;
+}
+
+#manage_muny_view>.frm_manage_muny_view>.manage_muny_view_frame>button{
+	background-color : #E4373C;
+	color : #fff;
+	border : 1px solid #666;
+	border-radius : 5px;
+	width : 80px;
+	height : 35px;
+	margin-left : 50px;
+	margin-top : 30px;
+	font-size : 15px;
+}
+
+#manage_muny_view>.frm_manage_muny_view>.manage_muny_view_frame>.btnMunyConfirm{
+	background-color : #55ca;
+	color : #fff;
+	margin-left : 600px;
+}
+
+/*-----------------------------------------------------------------------*/
+
+#FAQ_insert{
+	box-sizing : border-box;
+	color : #000;
+	padding : 50px 20px;
+	overflow : auto;
+}
+
+#FAQ_insert>.frm_FAQ_insert>.back{
+	color : #fff;
+	border : none;
+	background-color : #002;
+	font-size : 60px;
+	margin : 20px;
+	margin-bottom : 0;
+}
+
+#FAQ_insert>.frm_FAQ_insert>.FAQ_insert_frame{
+	margin : 10px auto;
+	width : 900px;
+	border : 1px solid #fff;
+	border-radius : 15px;
+	min-height : 700px;
+	box-sizing : border-box;
+	padding : 0 40px;
+}
+
+#FAQ_insert>.frm_FAQ_insert>.FAQ_insert_frame>h1{
+	margin-bottom : 50px;
+	color : #fff;
+}
+
+#FAQ_insert>.frm_FAQ_insert>.FAQ_insert_frame>label{
+	display : inline-block;
+	width : 42px;
+	margin-left : 40px;
+	color : #fff;
+}
+
+#FAQ_insert>.frm_FAQ_insert>.FAQ_insert_frame>button{
+	background-color : #55ca;
+	color : #fff;
+	border : 1px solid #666;
+	border-radius : 5px;
+	width : 80px;
+	height : 35px;
+	margin-left : 30px;
+	margin-top : 10px;
+	font-size : 15px;
+}
+
+#FAQ_insert>.frm_FAQ_insert>.FAQ_insert_frame>.btnFAQ_insertR{
+	margin-left : 600px;
+}
+
+
+@keyframes spinner {
+  to {transform: rotate(360deg);}
+}
+
+.spinner:before {
+  content: '';
+  z-index:999;
+  box-sizing: border-box;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 80px;
+  height: 80px;
+  margin-top: -10px;
+  margin-left: -10px;
+  border-radius: 50%;
+  border: 2px solid #ccc;
+  border-top-color: #000;
+  animation: spinner .6s linear infinite;
+}
+
+/*-----------------------------------------------------------------------*/
+
+#FAQ_update{
+	box-sizing : border-box;
+	color : #000;
+	padding : 50px 20px;
+	overflow : auto;
+}
+
+#FAQ_update>.frm_FAQ_update>.back{
+	color : #fff;
+	border : none;
+	background-color : #002;
+	font-size : 60px;
+	margin : 20px;
+	margin-bottom : 0;
+}
+
+#FAQ_update>.frm_FAQ_update>.FAQ_update_frame{
+	margin : 10px auto;
+	width : 900px;
+	border : 1px solid #fff;
+	border-radius : 15px;
+	min-height : 700px;
+	box-sizing : border-box;
+	padding : 0 40px;
+}
+
+#FAQ_update>.frm_FAQ_update>.FAQ_update_frame>h1{
+	margin-bottom : 50px;
+	color : #fff;
+}
+
+#FAQ_update>.frm_FAQ_update>.FAQ_update_frame>label{
+	display : inline-block;
+	width : 42px;
+	margin-left : 40px;
+	color : #fff;
+}
+
+#FAQ_update>.frm_FAQ_update>.FAQ_update_frame>button{
+	background-color : #55ca;
+	color : #fff;
+	border : 1px solid #666;
+	border-radius : 5px;
+	width : 80px;
+	height : 35px;
+	margin-left : 30px;
+	margin-top : 10px;
+	font-size : 15px;
+}
+
+#FAQ_update>.frm_FAQ_update>.FAQ_update_frame>.btnFAQ_updateR{
+	margin-left : 600px;
+}
+
+
+@keyframes spinner {
+  to {transform: rotate(360deg);}
+}
+
+.spinner:before {
+  content: '';
+  z-index:999;
+  box-sizing: border-box;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 80px;
+  height: 80px;
+  margin-top: -10px;
+  margin-left: -10px;
+  border-radius: 50%;
+  border: 2px solid #ccc;
+  border-top-color: #000;
+  animation: spinner .6s linear infinite;
+}
+
+/*------------------------------------------------------------------------------*/
+#FAQ_view{
+	box-sizing : border-box;
+	color : #000;
+	padding : 50px 20px;
+	overflow : auto;
+}
+
+#FAQ_view>.frm_FAQ_view>.FAQ_view_frame{
+	margin : 10px auto;
+	width : 900px;
+	border : 1px solid #fff;
+	border-radius : 15px;
+	min-height : 700px;
+	box-sizing : border-box;
+	padding : 0 40px;
+}
+
+#FAQ_view>.frm_FAQ_view>.FAQ_view_frame>h1{
+	margin-bottom : 50px;
+	color : #fff;
+}
+
+#FAQ_view>.frm_FAQ_view>.FAQ_view_frame>label{
+	display : inline-block;
+	width : 50px;
+	margin-left : 40px;
+	color : #fff;
+}
+
+#FAQ_view>.frm_FAQ_view>.FAQ_view_frame>.FAQ_view_doc{
+	width : 100%;
+	min-height : 340px;
+	border-radius : 5px;
+}
+
+#FAQ_view>.frm_FAQ_view>.FAQ_view_frame>button{
+	background-color : #55ca;
+	color : #fff;
+	border : 1px solid #666;
+	border-radius : 5px;
+	width : 80px;
+	height : 35px;
+	margin-left : 50px;
+	margin-top : 30px;
+	font-size : 15px;
+}
+
+#FAQ_view>.frm_FAQ_view>.FAQ_view_frame>.btnFAQ_update{
+	color : #fff;
+	margin-left : 600px;
+}

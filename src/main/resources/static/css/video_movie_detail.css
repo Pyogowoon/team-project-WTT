@@ -1,0 +1,373 @@
+@charset "UTF-8";
+ 
+.onmouse_container{
+    background-color: black;
+    color : white;
+}
+h1{
+	width : 40%;
+	margin: 0 auto;
+	margin-top : 40px;
+}
+#previous{
+	margin-right : 800px;
+	margin-top : 100px;
+
+}
+#btnContainer{
+width : 400px;
+	margin : 30px auto;
+	  display: flex;
+  flex-direction: row
+ 
+ 
+}
+#container{
+	width : 100vh;
+	border: 3px solid gray;
+	display : flex;
+	margin: auto;
+	height: 40vh;
+	
+}
+#detail1{
+	width : 60vh;
+
+	min-height : 300px;
+	padding: 50px;
+	
+}
+#detail2{
+	padding : 40px;
+	width: 40vh;
+}
+.img_button{
+	width : 80px;
+ 	background:url('../img/whiteplay.png') no-repeat center ;
+ 	 transform: translate(40%, 0%);
+}
+.home_button{
+	width : 80px;
+		background:url('../img/home.png') no-repeat center ;
+		margin-left : 40px;
+}
+.mark_button{
+	width : 40px;
+	margin-left : 80px;
+	background:url('../img/bookmark.png') no-repeat center ;
+}
+#detail1 > span{
+	display:inline-block;
+	padding-bottom : 20px;
+}
+#detail2 > span{
+	display:inline-block;
+	padding-bottom : 20px;
+}
+
+#left{
+	background-color : white;
+}
+/* Dropdown Button */
+.dropbtn {
+  background-color: black;
+  color: white;
+  padding: 16px;
+  font-size: 23px;
+  border: 1px solid white;
+  min-width: 220px;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+  margin-left : 910px;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
+
+/* Style for dropdown content */
+.dropdown-content {
+  display: none; /* Hidden by default */
+  position: absolute;
+  background-color: #ffffff;
+  min-width: 85px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+/* Style for each content div */
+.dropdown-content div {
+  padding: 10px 5px;
+}
+
+/* Highlight dropdown options on hover */
+.dropdown-content div:hover {
+  background-color: #eaeaea;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dEp{
+	margin : auto;
+	width : 100vh;
+	border-bottom: 2px solid gray;
+	display : flex;
+	margin-top: 20px;
+	
+}
+.item_onmouse{
+	flex-direction : row;
+	margin : 20px;
+}
+.item2_onmouse{
+	margin-top:10px;
+}
+
+/*카드 영역*/
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap");
+
+.cardContainer{
+	width : 100vh;
+	margin : auto;
+}
+
+.hero-container {
+	margin: auto;
+	display: flex;
+	
+	
+}
+
+.main-container {
+	width: 240px;
+	height: 540px;
+	position: relative;
+	margin-right : 40px;
+	
+
+}
+
+.poster-container {
+	width: 180px;
+	position: absolute;
+	top: 0;
+	left: 20px;
+	z-index: 9999;
+}
+
+.poster-container .poster {
+	width: 100%;
+	box-shadow: 0 5px 20px 3px rgba(0, 0, 0, 0.6);
+}
+
+.ticket-container {
+	background:black;
+	color: white;
+	width: 220px;
+	height: 420px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	border-radius: 5px;
+	position: absolute;
+	top: 80px;
+	box-shadow: 0 5px 20px 3px rgba(0, 0, 0, 0.6);
+	opacity: 0;
+}
+/*호버 있었는데 뺐음 넣어도됨 원래 .main-container:hover .ticket-container */
+.main-container .ticket-container {
+	opacity: 1;
+	animation: bounceIn 0.2s linear;
+}
+
+@keyframes bounceIn {
+	0%,
+	20%,
+	40%,
+	60%,
+	80%,
+	to {
+		-webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+		
+	}
+	0% {
+		opacity: 0;
+		-webkit-transform: scale3d(0.3, 0.3, 0.3);
+		transform: scale3d(0.3, 0.3, 0.3);
+	}
+	20% {
+		-webkit-transform: scale3d(1.03, 1.03, 1.03);
+		transform: scale3d(1.03, 1.03, 1.03);
+	}
+	40% {
+		-webkit-transform: scale3d(0.9, 0.9, 0.9);
+		transform: scale3d(0.9, 0.9, 0.9);
+	}
+	60% {
+		opacity: 1;
+		-webkit-transform: scale3d(1.01, 1.01, 1.01);
+		transform: scale3d(1.01, 1.01, 1.01);
+	}
+	80% {
+		-webkit-transform: scale3d(0.97, 0.97, 0.97);
+		transform: scale3d(0.97, 0.97, 0.97);
+	}
+	to {
+		opacity: 1;
+		-webkit-transform: scaleX(1);
+		transform: scaleX(1);
+	}
+}
+
+/* @keyframes bounce {
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+} */
+
+.ticket__content {
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+	text-align: center;
+}
+
+.ticket__movie-title {
+	text-transform: uppercase;
+	margin-bottom: 5px;
+}
+
+.ticket__movie-slogan {
+	color: #999;
+	font-size: 0.9rem;
+	margin-bottom: 20px;
+}
+
+.ticket__current-price {
+	color: #69c982;
+	font-size: 1.4rem;
+	font-weight: bold;
+}
+
+.ticket__old-price {
+	color: #999;
+	text-decoration: line-through;
+	margin-bottom: 10px;
+}
+
+.ticket__buy-btn {
+	cursor: pointer;
+	width: 100%;
+	background: #2f2f2f;
+	color: white;
+	padding: 15px 0;
+	font-size: 1rem;
+	font-weight: bold;
+	text-transform: uppercase;
+	border: 0;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+.hide_info{
+}
+.hide_info2{
+	display : none;
+}
+.hide_info3{
+	display: none;
+}
+.like-btn-svg {
+  width: 80px;
+  height: 80px;
+  
+  transform: translate(40%, -10%);
+  background: url(https://abs.twimg.com/a/1446542199/img/t1/web_heart_animation.png) no-repeat;
+
+  cursor: pointer;
+	display:inline-block;
+  
+
+}
+.like-btn-svg.animate {
+  transition: background 1s steps(28);
+  animation: fave-like-btn-svg 1s steps(28);
+  background-position: -2800px 0;
+}
+.btn y mr-3 bt{
+	background-color : black;
+}
+
+
+
+
+#seasonSel{
+	float : right;
+
+	width : 200px;
+	height : 30px;
+	color : white;
+	background-color : black;
+	font-size : 19px;
+	text-align : center;
+}
+.video{
+	display : relative;
+}
+.mutebtn{
+	display : absolute;
+	margin : auto;
+	width : 900px;
+transform: translate(92%, -340%);
+opacity: 0.5;
+ cursor: pointer;
+
+}
+.unmute {
+	
+  background-image: url('../img/muted2.png');
+  background-size: cover;
+  width: 35px;
+  height: 32px;
+  cursor: pointer;
+}
+
+.mute {
+  background-image: url('../img/unmuted2.png');
+}
+

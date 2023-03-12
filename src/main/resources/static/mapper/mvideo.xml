@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.prec.mybatis.MVideoMapper">
+	<insert id='videoInsert' parameterType="com.prec.video.MVideoVo">
+		insert into video(genre,title,tag,vCat,sCnt,eCnt,pd,actor,country,weather,vYear,hsd,age)
+		values(#{genre},#{title},#{tag},#{vCat},#{sCnt},#{eCnt},#{pd},#{actor},#{country},#{weather},#{vYear},#{hsd},#{age})
+	</insert>
+	<insert id='videoAttInsert' parameterType="com.prec.video.VideoAtt">
+		insert into videoAtt(serial, pOriFile,pSysFile, tOriFile,tSysFile) values
+		<foreach collection="list" item='vo' separator=",">
+			(#{vo.serial}, #{vo.pOriFile},#{vo.pSysFile},#{vo.tOriFile},#{vo.tSysFile})
+		</foreach>
+	</insert>
+	<insert id='videoAttInsertgong' parameterType="Integer">
+		insert into videoAtt(serial) values(#{_parameter})
+	</insert>
+	<insert id='seasonInfoInsert' parameterType="com.prec.video.SeasonInfoVo">
+		insert into seasonInfo(serial,season,epCnt) values
+		<foreach collection="list" item='vo' separator=','>
+			(#{vo.serial},#{vo.season},#{vo.epCnt})
+		</foreach>
+	</insert>
+	<insert id='seasonInfoInsertOne' parameterType="com.prec.video.SeasonInfoVo">
+		insert into seasonInfo(serial, season, epCnt)
+		values(#{serial},#{season},#{epCnt})
+	</insert>
+	
+	<select id='lastSerial' resultType="Integer">
+		select max(serial) from video	
+	</select>
+	
+	<select id='videoTotSize' parameterType='com.prec.bean.ManagerPage' resultType='Integer'>
+		select count(serial) from video
+		where genre like '%${findStr}%' or title like '%${findStr}%'
+		or vCat like '%${findStr}%' or pd like '%${findStr}%' 
+		or country like '%${findStr}%' or vYear like '%${findStr}%'
+	</select>
+	
+	<select id='videoSelect' parameterType="com.prec.bean.ManagerPage" resultType="com.prec.video.MVideoVo">
+		select serial, genre, title, vCat, pd, country, vYear from video
+		where genre like '%${findStr}%' or title like '%${findStr}%'
+		or vCat like '%${findStr}%' or pd like '%${findStr}%' 
+		or country like '%${findStr}%' or vYear like '%${findStr}%'
+		limit ${startNo},${listSize}
+	</select> 
+	<select id='videoView' parameterType='Integer' resultType="com.prec.video.MVideoVo">
+		select serial, genre, title, vCat,tag,sCnt,eCnt,pd,actor,country,weather,vYear,hsd,age from video
+		where serial = #{_parameter}
+	</select>
+	<select id='videoAttView' parameterType='Integer' resultType='com.prec.video.VideoAtt'>
+		select sno,pOriFile,pSysFile,tOriFile,tSysFile from videoAtt
+		where serial = #{_parameter}
+	</select>
+	<select id='seasonInfoView' parameterType="Integer" resultType="com.prec.video.SeasonInfoVo">
+		select sno, season,epCnt from seasonInfo
+		where serial = #{_parameter}
+	</select>
+	<select id='findVideo' parameterType="com.prec.bean.ManagerPage" resultType="com.prec.video.MVideoVo">
+		select serial, title, sCnt,eCnt, pd from video
+		where genre like '%${findStr}%' or title like '%${findStr}%' or serial like '%${findStr}%'
+		or vCat like '%${findStr}%' or pd like '%${findStr}%' 
+		or country like '%${findStr}%' or vYear like '%${findStr}%'
+	</select>
+	
+	<update id='videoModify' parameterType="com.prec.video.MVideoVo">
+		update video set genre=#{genre}, title=#{title},vCat=#{vCat},tag=#{tag},sCnt=#{sCnt},eCnt=#{eCnt},pd=#{pd},
+							  actor=#{actor},country=#{country},weather=#{weather},vYear=#{vYear},hsd=#{hsd},age=#{age}
+		where serial=#{serial}
+	</update>
+	<update id='seasonInfoModify' parameterType="com.prec.video.SeasonInfoVo">
+			update seasonInfo set season = #{season}, epCnt=#{epCnt}
+			where sno = #{sno}
+	</update>
+	<update id='videoAttModify' parameterType="com.prec.video.VideoAtt">
+		update videoAtt 
+		<set>
+			<if test="pOriFile != null">
+				pOriFile = #{pOriFile}, pSysFile=#{pSysFile}
+				where serial =#{serial}
+			</if>
+			<if test="tOriFile != null">
+				tOriFile = #{tOriFile}, tSysFile=#{tSysFile}
+				where serial =#{serial}
+			</if>
+		</set>
+	</update>
+	
+	<delete id='videoAttDelete' parameterType="Integer">
+		delete from videoAtt where serial=${_parameter}
+	</delete>
+	<delete id='seasonInfoDeleteOne' parameterType='Integer'>
+		delete from seasonInfo where sno=#{_parameter}
+	</delete>
+	<delete id='videoDelete' parameterType="Integer">
+		delete from video where serial=#{_parameter}
+	</delete>
+	<delete id='seasonInfoDelete' parameterType="Integer">
+		delete from seasonInfo where serial=#{_parameter}
+	</delete>
+	<delete id='videoDeleteList' parameterType="Integer">
+		delete from video
+		<where>
+			<foreach collection='list' item='serial' separator="or">
+				serial = ${serial}
+			</foreach>
+		</where>
+	</delete>
+	<delete id='seasonInfoDeleteList' parameterType="Integer">
+		delete from seasonInfo
+		<where>
+			<foreach collection='list' item='serial' separator="or">
+				serial = ${serial}
+			</foreach>
+		</where>
+	</delete>
+	<delete id='videoAttDeleteList' parameterType='Integer'>
+		delete from videoAtt
+		<where>
+			<foreach collection='list' item='serial' separator="or">
+				serial = ${serial}
+			</foreach>
+		</where>
+	</delete>
+</mapper>

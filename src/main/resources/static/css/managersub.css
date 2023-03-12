@@ -1,0 +1,324 @@
+@charset "UTF-8";
+/*-------------회원관리------------------*/
+
+#m_user{
+	margin-left : 10px;
+	margin-top : 10px;
+}
+#m_user>h1{
+	text-align : center;
+}
+#m_user .searchTop{
+	display : flex;
+}
+#m_user .searchTop>.filter{
+	margin-top:10px;
+	flex : 1;
+	
+}
+#m_user .searchTop>.searchZone{
+	flex: 0;
+	text-align : right;
+	margin-right : 15px;
+	border-bottom : 2px solid #fff;
+	flex-basis: 200px;
+}
+#m_user .searchTop>.searchZone>.findStr{ /*24일추가*/ 
+	border : 0;
+	height: 30px;
+	background-color: transparent;
+	color: #fff; 
+}
+#m_user .searchTop>.align {
+	flex:0;
+}
+#m_user .searchTop>.align>select {
+	padding : 3px;
+	text-align : center;
+	width : 120px;
+	height : 33px;
+	margin-right : 6px;
+}
+#m_user #m_list{
+	min-width : 1100px;
+}
+#m_user #m_list>#title{
+	display : flex;
+	background-color : #ccc;
+	margin-top : 10px;
+	padding : 10px 0;
+}
+#m_user #m_list>#items .item{
+	display : flex;
+	padding : 5px 0;
+}
+#m_user #m_list>#items .clickhere{
+	flex:1;
+	display : flex;
+}
+#m_user #m_list .chk{ 
+	flex-basis : 40px; 
+	text-align : center;
+}
+#m_user #m_list .email{ 
+	flex-basis : 300px;
+	flex : 1; 
+	text-align : center;
+	overflow: hidden;
+	white-space:nowrap;
+	text-overflow: ellipsis;
+}
+#m_user #m_list .uName{ 
+	flex-basis : 200px; 
+	text-align : center;
+	overflow: hidden;
+	white-space:nowrap;
+	text-overflow: ellipsis;
+}
+#m_user #m_list .phone{ flex-basis : 150px; text-align : center;}
+#m_user #m_list .nick{ flex-basis : 150px; text-align : center; }
+#m_user #m_list .paychk{ 
+	flex-basis : 100px; 
+	text-align : center;
+}
+#m_user #m_list .payday{ 
+	flex-basis : 200px; 
+	overflow: hidden;
+	white-space:nowrap;
+	text-overflow: ellipsis;
+	text-align : center;
+}
+#m_user #m_list .pwd{ 
+	flex-basis : 100px;
+	 
+	text-align : center;
+	overflow: hidden;
+	white-space:nowrap;
+	text-overflow: ellipsis;
+}
+#m_user #m_list>#items>.item{
+	border-bottom : 1px solid #ccc;
+}
+#m_user #btns{
+	margin-top : 10px;
+	text-align : center;
+}
+#m_user #btns button {
+	height : 30px;
+}
+#m_user #btns .btnLtlt{
+	border-radius : 8px 0 0 8px;
+	border : 1px solid #000;
+}
+#m_user #btns .btnGtgt{
+	border-radius : 0 8px 8px 0;
+	border : 1px solid #000;
+}
+/*------------------회원 상세보기----------------------*/
+#m_user_view{
+	
+}
+#m_user_view>#ucontent{
+	margin-left : 10px;
+	margin : 10px auto;
+	width : 600px;
+	border : 1px solid #fff;
+	padding : 10px;
+	background-color : transparent;
+	border-radius: 15px;
+}
+#m_user_view>#ucontent>h1{
+	padding-left : 20px;
+}
+#m_user_view .userInfo{
+	display : flex;
+	padding: 20px;
+}
+#m_user_view .userInfo>.userInfoD{
+	--text-align : center;
+}
+#m_user_view .userInfo>.userInfoD label{
+	display : inline-block;
+	width : 120px;
+	height : 30px;
+	text-align : right;
+	text-decoration:underline;
+	text-underline-position : under;
+	text-decoration-color:#fff;  
+	margin-right : 10px;
+}
+#m_user_view .userInfo>.userInfoD input{
+	border : 0;
+	border-bottom : 2px solid #fff;
+	background-color: transparent;
+	color: #fff;
+}
+#m_user_view .userInfo>.lineInfo {
+	padding-right : 30px;
+	text-align : right;
+	flex : 1;
+}
+#m_user_view .userInfo>.lineInfo>h3{
+	padding-right : 30px;
+}
+#m_user_view .userInfo>.lineInfo>#blank {
+	height : 150px;
+}
+#m_user_view #btns{
+	text-align : center;
+}
+/*---------------회워정보 입력 및 수정-------------*/
+#m_user_input>#ucontent{
+	margin-left : 10px;
+	margin : 10px auto;
+	width : 600px;
+	border : 1px solid #fff;
+	padding : 10px;
+	background-color : transparent;
+	border-radius: 15px;
+}
+#m_user_input>#ucontent>h1{
+	padding-left : 20px;
+}
+#m_user_input .userInfo{
+	padding: 20px;
+}
+#m_user_input .userInfo>.userInfoD{
+	--text-align : center;
+}
+#m_user_input .userInfo>.userInfoD label{
+	display : inline-block;
+	width : 120px;
+	height : 30px;
+	text-align : right;
+	text-decoration:underline;
+	text-underline-position : under;
+	text-decoration-color:#fff;  
+	margin-right : 10px;
+}
+#m_user_input .userInfo>.userInfoD input{
+	border : 0;
+	border-bottom : 1px solid #fff;
+	background-color: transparent;
+	color: #fff;
+}
+#m_user_input #btns{
+	text-align : center;
+}
+
+/*--------------신청관리-----------------------*/
+#m_ask_list{
+	margin:0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/* m_ask_list---------*/
+#m_ask_list{
+	width: 100%;
+	min-width: 1100px;
+	margin-left: 5px;
+	border: 4px solid #ddd;
+	border-radius: 20px;
+	padding: 10px;
+}
+#m_ask_list .zone{
+	display: flex;
+}
+#m_ask_list .zone label{
+	display : inline-block;
+	width : 90px;
+}
+#m_ask_list .zone .chk_complete{
+	flex: 1;
+}
+#m_ask_list .zone .search_zone{
+	flex-basis : 400px;
+	flex-wrap: nowrap;
+	text-align: right;
+}
+#m_ask_list .zone .search_zone span{
+	border-bottom: 2px solid #000;
+}	
+#m_ask_list .search_zone button{
+	border: none;
+	background-color: #fff;
+}
+#m_ask_list .title{
+	display : flex;
+	background-color: #aaa;
+	padding: 2px;
+	margin-top: 10px;
+}
+#m_ask_list .item{
+	display : flex;
+}
+#m_ask_list .choice{
+	flex-basis: 60px;
+	text-align: center;
+	}
+#m_ask_list .sno{
+	flex-basis: 60px;
+	}
+#m_ask_list .cTitle{
+	flex-basis: 200px;
+	flex : 1;
+	text-align : center;
+	}
+#m_ask_list .cYear{
+	flex-basis: 120px;
+	}
+#m_ask_list .cGenre{
+	flex-basis: 160px;
+	}
+#m_ask_list .con{
+	flex-basis: 120px;
+	}
+#m_ask_list .complete{
+	flex-basis: 80px;
+	}
+
+#m_ask_list .item:last-child{
+	border-bottom: 2px solid #aaa;
+	margin-bottom: 2px;
+}
+#m_ask_list .btns{
+	text-align: center;
+}
+#m_ask_list .btns>button{
+	border: 0;
+	border-radius: 20px;
+	padding: 7px;
+}
+#m_ask_list .btns>button:hover{
+	background-color: #aaa;
+}
+
+
+/*---------------------------------------*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

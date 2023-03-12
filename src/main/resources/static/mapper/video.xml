@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace='com.prec.mybatis.VideoMapper'>
+
+<!--  목록 -->
+	<select id='videolist' resultType="com.prec.video.VideoVo">
+		select vLike,vYear,age,eCnt,hsd,title,genre,tag,actor,pd,sno,v.serial,vd.serial,dSeason,dEp,dPoster,dVid,playTime,dEptitle,teaser,poster,age from video v join vDetail vd on v.serial = vd.serial 
+		where v.serial=#{serial}
+	</select>
+	
+	<!-- 회차정보 -->
+	<select id="vDetail" resultType='com.prec.video.VideoVo'>
+		select dSeason,dPoster,dEp,playTime,dEpTitle,sno from vDetail
+	</select>
+	<!-- 시즌 중복 제거 쿼리 -->
+	<select id="Season" parameterType='Integer' resultType='com.prec.video.VideoVo'>
+		select distinct dSeason from vDetail where serial=#{_parameter}
+	</select>
+	
+	<!-- 좋아요 기능(미완입니다.) -->
+	<update id="like_check" parameterType="HashMap">
+	update liketo set like_check = like_check + 1 where serial=#{serial} and user=#{user}
+	</update>
+	<!-- 좋아요 기능(미완입니다) -->
+	<update id="like_check_cancel" parameterType="HashMap">
+	update liketo set like_check = 0 where serial=#{serial} and user=#{user}
+	</update>
+
+<!-- 주원22일 수정 -->
+	<select id='video_list' parameterType='com.prec.video.VideoVo' resultType='com.prec.video.VideoVo'>
+		select serial, genre, title, hit, vCat, tag, sCnt, eCnt, pd, actor, country, weather,
+		       vYear, hsd, age, vLike, poster, teaser
+		from video  
+		where vCat=#{vCat}
+	</select>
+	<select id='video_search' parameterType='com.prec.video.rFindVo' resultType='com.prec.video.VideoVo'>
+		select v.serial, genre, title, hit, vCat, tag, sCnt, eCnt, pd, actor, country, weather,
+		       vYear, hsd, age, vLike, pSysFile, tSysFile
+		from video v join videoAtt va on v.serial = va.serial 
+		where (genre   like '%${findStr}%' or title   like '%${findStr}%'
+		or    vCat    like '%${findStr}%' or pd      like '%${findStr}%' 
+		or    actor   like '%${findStr}%' or country like '%${findStr}%'
+		or    weather like '%${findStr}%' or vYear   like '%${findStr}%'
+		or    age     like '%${findStr}%' )
+		<foreach collection="tagNames" open=" and " item='tagName' separator=" and ">
+			tag like '%${tagName}%'
+		</foreach>
+	</select>
+	
+	<insert id='keyword' parameterType='com.prec.video.rFindVo'>
+		insert into rFind(email, findStr )
+		values( #{email}, #{findStr})
+	</insert>
+	
+	<delete id='video_rFind_delete' parameterType='Integer'>
+		delete from rFind
+		where sno = #{_parameter}
+	</delete>
+	
+	<select id='recent_keyword_select' parameterType='com.prec.video.rFindVo' resultType='com.prec.video.rFindVo'>
+		select sno, email, findStr
+		from rFind
+		where email = #{email}
+		order by sno desc
+		limit 0,9
+	</select>
+	
+	<select id='before_keyword_insert' parameterType='com.prec.video.rFindVo' resultType='String'>
+		select distinct findStr from rFind
+		where email = #{email} and findStr = #{findStr}
+	</select>
+	
+	<select id='tagSelect' parameterType='com.prec.video.TagVo' resultType='com.prec.video.TagVo'>
+		select tagName
+		from tags
+	</select>
+	
+	<select id='tagCheck' parameterType='com.prec.video.rFindVo' resultType='com.prec.video.VideoVo'>
+		select serial, genre, title, hit, vCat, tag, sCnt, eCnt, pd, actor, country, weather,
+		       vYear, hsd, age, vLike, poster, teaser
+		from Video
+		where (genre   like '%${findStr}%' or title   like '%${findStr}%'
+		or    vCat    like '%${findStr}%' or pd      like '%${findStr}%' 
+		or    actor   like '%${findStr}%' or country like '%${findStr}%'
+		or    weather like '%${findStr}%' or vYear   like '%${findStr}%'
+		or    age     like '%${findStr}%') and tag like '%${tagName}%'
+	</select>
+	<!-- 주원끝 -->
+		<!--  성현 25일 -->
+	<!-- ====================================================== -->
+	<select id='selectVideo' parameterType='Integer' resultType='VideoVo'>
+select vLike,vYear,age,eCnt,hsd,title,genre,tag,actor,pd,sno,v.serial,dSeason,dEp,dPoster,dVid,playTime,dEptitle,teaser,poster,age from video v join vDetail vd on v.serial = vd.serial
+	</select>
+	
+	<select id="viewVideo"  parameterType="Integer" resultType="com.prec.video.VideoVo">
+	select v.serial,vd.sno,genre,title,hit,vCat,tag,sCnt,eCnt,pd,actor,country,
+			weather,vYear,hsd,age,vd.pSysFile,vd.tSysFile from video v join videoAtt vd on v.serial = vd.serial where v.serial=#{_parameter}
+	</select>
+	<select id="mainVideo" resultType="com.prec.video.VideoVo">
+			select v.serial,vd.sno,genre,title,hit,vCat,tag,sCnt,eCnt,pd,actor,country,
+			weather,vYear,hsd,age,vd.pSysFile,vd.tSysFile from video v join videoAtt vd on v.serial = vd.serial 
+			order by hit desc
+			limit 0,17
+	</select>
+		
+	<select id="detailAtt" parameterType="com.prec.video.VideoVo" resultType="com.prec.vDetail.MvDetailVo">
+		select v.sno,serial,dSeason,dEp,dPoster,dVid,playTime,dEptitle,vSno,dpSysFile,vSysFile from vdetail v join vdetailatt vd on v.sno = vSno where serial=#{serial} and dSeason = #{dSeason}
+	
+	</select>
+	<select id="detailAttOne" parameterType="Integer" resultType="com.prec.vDetail.MvDetailVo">
+		select v.sno,serial,dSeason,dEp,dPoster,dVid,playTime,dEptitle,vSno,dpSysFile,vSysFile from vdetail v join vdetailatt vd on v.sno = vSno where v.sno=#{_parameter}
+	
+	</select>
+	<select id='adActor' resultType="AdVo">
+		select distinct pActor from ad
+	</select>
+	
+	<!-- ==============근 07-27 =========== -->
+	
+	<select id='videoPlay' parameterType='Integer' resultType='VDetailAtt'>
+		select sno,vSno,dpOriFile,dpSysFile,vOriFile,vSysFile from vDetailAtt where vSno=#{_parameter}
+	</select>
+		<select id='videoAd' parameterType='AdVo' resultType='AdVo'>
+      select sno,pCat,pInfo,pName,pImg,pUrl,pTime,pActor
+      from ad where pCat=#{pCat}
+   </select>
+   
+	
+</mapper>

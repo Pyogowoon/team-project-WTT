@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.prec.mybatis.MvDetailMapper">
+
+	<select id='totSize' parameterType="com.prec.bean.ManagerPage" resultType="Integer">
+		select count(sno) from vDetail
+		where serial like '%${findStr}%' or dPoster like '%${findStr}%' 
+		or dVid like '%${findStr}%' or playTime like '%${findStr}%' or dEptitle like '%${findStr}%'
+	</select>
+	<select id='vDetailSelect' parameterType="com.prec.bean.ManagerPage" resultType="com.prec.vDetail.MvDetailVo">
+		select sno,serial,dSeason,dEp,dPoster,dVid,playTime,dEptitle from vDetail
+		where serial like '%${findStr}%' or dPoster like '%${findStr}%' 
+		or dVid like '%${findStr}%' or playTime like '%${findStr}%' or dEptitle like '%${findStr}%'
+		order by serial asc, dSeason asc, dEp asc
+		limit ${startNo},${listSize}
+	</select>
+	<select id="getSno" resultType="Integer">
+		select max(sno) from vDetail
+	</select>
+	<select id='detailView' parameterType="Integer" resultType="com.prec.vDetail.MvDetailVo">
+		select v.sno, serial, dSeason,dEp,dPoster,dpSysFile,dpOriFile,dVid,vSysFile,vOriFile,playTime,dEptitle
+		from vDetail v left join vDetailAtt v1 on v.sno = v1.vSno 
+		where serial=#{_parameter}
+	</select>
+	<select id='detailAttView' parameterType="Integer" resultType="com.prec.vDetail.VDetailAtt">
+		select sno,vSno,dpSysFile,dpOriFile,vSysFile,vOriFile
+		from vDetailAtt
+		where vSno=#{_parameter}
+	</select>
+	<select id='detailFind' parameterType="com.prec.bean.ManagerPage" resultType="com.prec.vDetail.MvDetailVo">
+		select d.sno,d.serial,dSeason,dEp,vSysFile,v.title 
+		from vdetail d join vdetailatt t join video v
+		on d.sno = t.vSNo and d.serial = v.serial
+		where d.serial like '%${findStr}%' or dPoster like '%${findStr}%' or v.title like '%${findStr}%'
+		or dVid like '%${findStr}%' or playTime like '%${findStr}%' or dEptitle like '%${findStr}%'
+		order by d.serial asc
+	</select>
+	<select id='detailViewOne' parameterType="Integer" resultType="com.prec.vDetail.MvDetailVo">
+		select d.sno,d.serial,dSeason,dEp,vSysFile,v.title,dEptitle
+		from vdetail d join vdetailatt t join video v
+		on d.sno = t.vSNo and d.serial = v.serial
+		where d.sno = #{_parameter}
+	</select>
+	
+	
+	<insert id="vDetailInsert" parameterType="com.prec.vDetail.MvDetailVo">
+		insert into vDetail(serial, dSeason, dEp, playTime, dEptitle)
+		values (#{serial},#{dSeason},#{dEp},#{playTime},#{dEptitle} )
+	</insert>
+	<insert id="detailAttInsert" parameterType="com.prec.vDetail.VDetailAtt">
+		insert into vDetailAtt(vSno, dpOriFile,dpSysFile, vOriFile,vSysFile) values
+		<foreach collection="list" item='vo' separator=",">
+			(#{vo.vSno}, #{vo.dpOriFile},#{vo.dpSysFile},#{vo.vOriFile},#{vo.vSysFile})
+		</foreach>
+	</insert>
+	<insert id='detailAttInsertgong' parameterType="Integer">
+		insert into vDetailAtt(vSno) values(#{_parameter})
+	</insert>
+	
+	<update id="detailFileNameModify" parameterType="com.prec.vDetail.VDetailAtt">
+		update vDetail set dPoster=#{dpOriFile},dVid=#{vOriFile}
+		where sno = ${vSno}
+	</update>
+	<update id="detailModify" parameterType="com.prec.vDetail.MvDetailVo">
+		update vDetail set dSeason=#{dSeason}, dEp=#{dEp}, playTime=#{playTime}, dEptitle=#{dEptitle}
+		where sno = ${sno}
+	</update>
+	<update id='detailAttModify' parameterType="com.prec.vDetail.VDetailAtt">
+		update vDetailAtt set dpOriFile = #{dpOriFile}, dpSysFile = #{dpSysFile}, vOriFile=#{vOriFile}, vSysFile=#{vSysFile}
+		where vSno = ${vSno}
+	</update>
+	
+	<delete id='detailDelete' parameterType='Integer'>
+		delete from vDetail
+		<where>
+			<foreach collection="list" item='sno' separator="or">
+				sno=#{sno}
+			</foreach>
+		</where>
+	</delete>
+	<delete id='detailAttDelete' parameterType='Integer'>
+		delete from vDetailAtt 
+		<where>
+			<foreach collection="list" item='vSno' separator="or">
+				vSno=#{vSno}
+			</foreach>
+		</where>
+	</delete>
+	<delete id='detailDeleteAll' parameterType='Integer'>
+		delete from vDetail
+		<where>
+			<foreach collection='list' item='sno' separator="or">
+				sno = ${sno}
+			</foreach> 
+		</where>
+	</delete>
+	<delete id='detailAttDeleteAll' parameterType='Integer'>
+		delete from vDetailAtt
+		<where>
+			<foreach collection='list' item='vSno' separator="or">
+				vSno = ${vSno}
+			</foreach> 
+		</where>
+	</delete>
+</mapper>

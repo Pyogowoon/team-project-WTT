@@ -1,0 +1,129 @@
+@charset "UTF-8";
+#helper #switch {
+	position: absolute;
+	/* hidden */
+	appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+}
+#helper .switch_label {
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+  width: 58px;
+  height: 28px;
+  background: #fff;
+  border: 2px solid #daa;
+  border-radius: 20px;
+  transition: 0.2s;
+}
+#helper .switch_label:hover {
+  background: #efefef;
+}
+#helper .onf_btn {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  display: inline-block;
+  width: 19px;
+  height: 19px;
+  border-radius: 20px;
+  background: #daa;
+  transition: 0.2s;
+}
+/* checking style */
+#helper #switch:checked+.switch_label {
+  background: #c44;
+  border: 2px solid #c44;
+}
+
+#helper #switch:checked+.switch_label:hover {
+  background: #e55;
+}
+
+/* move */
+#helper #switch:checked+.switch_label .onf_btn {
+  left: 33px;
+  background: #fff;
+  box-shadow: 1px 2px 3px #00000020;
+}
+#helper .alarm {
+	display : inline-block;
+}
+#helper>#helper_FAQ{
+	display : flex;
+	width : 700px;
+	border : 1px solid #000;
+	padding : 10px;
+}
+#helper>#helper_FAQ>#frm_FAQ{
+	flex-basis: 150px;
+	text-align : center;
+}
+#helper>#helper_FAQ .frm_helper_FAQ div {
+	height : 50px;
+	border : 1px solid #000;
+	line-height : 3em;
+}
+#helper>#helper_FAQ .frm_helper_FAQ div:hover{
+	background-color : #eee;
+}
+#helper>#helper_FAQ #FAQ_list{
+	margin-left : 10px;
+	flex-basis : 550px;
+	--text-align : center;
+}
+#helper>#helper_FAQ #FAQ_list .item{
+	padding-left : 10px;
+	height : 30px;
+	border : 1px solid #000;
+}
+#helper>#helper_FAQ #FAQ_list .item:hover{
+	background-color : #eee;
+}
+#helper>#helper_FAQ #FAQ_list .item span{
+	display : inline-block;
+	line-height : 2em;
+}
+#helper>#helper_FAQ #FAQ_list .sno { width : 50px; }
+#helper>#helper_FAQ #FAQ_list .subject { width : 450px; }
+#helper>#helper_FAQ #FAQ_list .paging {
+	text-align : center;
+}
+#helper>#helper_FAQ #FAQ_list .paging button{
+	margin-top : 10px;
+	width : 268px;
+	background-color:#fff;
+	border : 1px solid #000;
+}
+#helper>#helper_FAQ #FAQ_list .paging button:hover{
+	background-color : #eee;
+}
+#helper>#helper_FAQ #FAQ_list .paging button:active{
+	background-color : #ddd;
+}
+#helper>#helper_FAQ #FAQ_list .paging button:visited{
+	background-color : #fff;
+}
+/* spinner----------------*/
+@keyframes spinner {
+  to {transform: rotate(360deg);}
+}
+ 
+.spinner:before {
+  content: '';
+  z-index : 999;
+  box-sizing: border-box;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 90px;
+  height: 90px;
+  margin-top: -10px;
+  margin-left: -10px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  border-top-color: #07d;
+  border-bottom-color: #07d;
+  animation: spinner .8s ease infinite;
+}

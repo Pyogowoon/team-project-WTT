@@ -1,0 +1,977 @@
+@charset "UTF-8";
+
+#mypage{
+	color : #fff;
+	padding : 40px;
+	box-sizing : border-box;
+}
+
+#mypage>.frm_mypage{
+	background-color : #002;
+	margin : 10px auto;
+	margin-top : 100px;
+	width : 600px;
+	border : 1px solid #fff;
+	border-radius : 15px;
+	min-height : 600px;
+}
+
+#mypage>.frm_mypage>h1{
+	margin-left : 10%;
+	margin-bottom : 40px;
+}
+
+#mypage>.frm_mypage button{
+	border : none;
+	margin-left : 20%;
+	background-color : #002;
+	color : #ccc;
+	font-size : 25px;
+	margin-bottom : 25px;
+}
+
+#mypage>.frm_mypage>.user_edit>button,
+#mypage>.frm_mypage>.user_setting>button{
+	margin-left : 25%;
+	font-size : 20px;
+	margin-bottom : 20px;
+}
+
+#mypage>.frm_mypage>.user_setting>.alarm_setting{
+	display : inline-block;
+	margin-left : 26%;
+	font-size : 20px;
+	color : #ccc;
+	margin-bottom : 15px;
+}
+
+#mypage>.frm_mypage>.user_setting>.alarm_bell{
+	margin-left : 10px;
+	font-size : 25px;
+}
+
+/*--------------------------user_modify----------------------------*/
+
+#user_modify{
+	box-sizing : border-box;
+	color : #fff;
+	padding : 40px;
+}
+
+#user_modify>.frm_user_modify>.user_modify_frame{
+	background-color : #002;
+	margin : 10px auto;
+	width : 600px;
+	border : 1px solid #fff;
+	border-radius : 15px;
+	min-height : 700px;
+	box-sizing : border-box;
+	padding-left : 40px;
+}
+
+#user_modify>.frm_user_modify>.back{
+	color : #fff;
+	border : none;
+	background-color : transparent;
+	font-size : 60px;
+	margin : 20px;
+}
+
+#user_modify>.frm_user_modify>.user_modify_frame>#pwdC,
+#user_modify>.frm_user_modify>.user_modify_frame>#phoneC{
+	display : none;
+	width : 100%;
+	box-sizing : border-box;
+	padding-left : 200px;
+	font-size : 18px;
+	font-weight : bold;
+}
+
+#user_modify>.frm_user_modify>.user_modify_frame>#modifyC{
+	color : #f00;
+	width : 100%;
+	box-sizing : border-box;
+	padding-left : 150px;
+	font-size : 20px;
+	font-weight : bold;
+}
+
+#user_modify>.frm_user_modify>.user_modify_frame>h2{
+	margin-left : 40px;
+}
+
+#user_modify>.frm_user_modify>.user_modify_frame>label{
+	display : inline-block;
+	width : 120px;
+	margin-left : 80px;
+	color : #ccc;
+}
+
+#user_modify>.frm_user_modify>.user_modify_frame>input[type=text],
+#user_modify>.frm_user_modify>.user_modify_frame>input[type=password]{
+	background-color : #002;
+	color : #fff;
+	border : none;
+	font-size : 18px;
+	margin-bottom : 10px;
+	margin-left : 5px;
+	border-bottom : 2px solid #fff;
+	box-sizing : border-box;
+	padding-bottom : 5px;
+	padding-left : 5px;
+	width : 200px;
+}
+
+#user_modify>.frm_user_modify>.user_modify_frame>button{
+	background-color : #55c;
+	color : #fff;
+	border : 1px solid #666;
+	border-radius : 10px;
+	width : 60px;
+	height : 30px;
+	margin-left : 30px;
+	margin-top : 15px;
+}
+
+#user_modify>.frm_user_modify>.user_modify_frame>.btnModify{
+	margin-left : 160px;
+}
+
+/*--------------------------mylist----------------------------*/
+
+#mylist{
+	box-sizing : border-box;
+	color : #fff;
+	padding : 50px 20px;
+	padding-right : 0px;
+}
+#mylist img{
+	width : 100%;
+	height : 80%;
+}
+
+#mylist>.frm_mylist>.back{
+	color : #fff;
+	border : none;
+	background-color : transparent;
+	font-size : 60px;
+	margin : 20px;
+}
+
+#mylist>.frm_mylist>h1{
+	margin-top : 10px;
+	margin-left : 110px;
+}
+
+#mylist>.frm_mylist>.h1first{
+	display : inline-block;
+	margin : 0;
+}
+
+#mylist>.frm_mylist>h2{
+	margin-left : 150px;
+}
+
+#mylist>.frm_mylist>.wishlist{
+	display : flex;
+	box-sizing : border-box;
+	width : 100%;
+	height : 330px;
+	overflow : hidden;
+	margin-left : 110px;
+}
+
+#mylist>.frm_mylist>.wishlist>.wishlist_empty_box{
+	color : #aaa;
+	font-size : 100px;
+	margin : 0;
+	margin-left : 40px;
+}
+
+#mylist>.frm_mylist>.wishlist>.wishlist_empty{
+	color : #aaa;
+	margin : 0;
+	margin-left : 30px;
+	margin-top : 40px;
+}
+
+#mylist>.frm_mylist>.wishlist>.item{
+	display : inline-block;
+	width : 170px;
+	height : 310px;
+	margin-left : 40px;
+	position : relative;
+}
+
+#mylist>.frm_mylist>.wishlist>.item>.item_title{
+	display : inline-block;
+	text-align : center;
+	font-size : 20px;
+	width : 100%;
+	height : 54px;
+}
+
+#mylist>.frm_mylist>.wishlist>.item>button{
+	background-color : transparent;
+	border : none;
+	color : #f00;
+	font-size : 30px;
+	position : absolute;
+	right : 0;
+	font-weight: bold;
+}
+
+/*--------------------------friendlist----------------------------*/
+
+#friendlist{
+	box-sizing : border-box;
+	color : #fff;
+	padding : 50px 20px;
+	overflow : auto;
+}
+
+#friendlist>.frm_friendlist>.back{
+	color : #fff;
+	border : none;
+	background-color : transparent;
+	font-size : 60px;
+	margin : 20px;
+}
+
+#friendlist>.frm_friendlist>h1{
+	display : inline-block;
+}
+
+#friendlist>.frm_friendlist>.btnFriendAdd{
+	margin-left : 40px;
+	background-color : transparent;
+	color : #fff;
+	font-size : 30px;
+	border : none;
+}
+#friendlist>.frm_friendlist>.friend_add>span{
+	display : none;
+	color : #f00;
+	width : 100%;
+	box-sizing : border-box;
+	padding-left : 120px;
+	font-size : 16px;
+	margin-bottom : 10px;
+}
+
+#friendlist>.frm_friendlist>.friend_add>label{
+	display : inline-block;
+	width : 110px;
+}
+
+#friendlist>.frm_friendlist>.friend_add{
+	margin-left : 170px;
+	margin-bottom : 20px;
+}
+
+#friendlist>.frm_friendlist>.friend_add>input[type=text],
+#friendlist>.frm_friendlist>.friend_add>input[type=email]{
+	color : #fff;
+	font-size : 18px;
+	background-color : transparent;
+	border : none;
+	border-bottom : 2px solid #eee8;
+	margin-bottom : 10px;
+	box-sizing : border-box;
+	padding-left : 10px;
+}
+
+#friendlist>.frm_friendlist>.friend_add>button{
+	background-color : #55ca;
+	color : #fff;
+	border : 1px solid #666;
+	border-radius : 5px;
+	width : 50px;
+	height : 25px;
+	margin-left : 20px;
+	
+}
+
+#friendlist>.frm_friendlist>.friend_add>.btnFriendAddR{
+	margin-left : 130px;
+}
+
+#friendlist>.frm_friendlist>.friend_info_list{
+	margin-left : 170px;
+}
+
+#friendlist>.frm_friendlist>.friend_info_list>.friend_info>span{
+	display : inline-block;
+	margin : 10px 0;
+	font-size : 18px;
+	margin-left : 15px;
+}
+
+#friendlist>.frm_friendlist>.friend_info_list>.friend_info>.friend_nick{
+	display : inline-block;
+	background-color : transparent;
+	color : #fff;
+	border : none;
+	font-size : 18px;
+	width : 130px;
+	text-align : center;
+}
+
+#friendlist>.frm_friendlist>.friend_info_list>.friend_info>.btnFriendNickEdit,
+#friendlist>.frm_friendlist>.friend_info_list>.friend_info>.btnFriendNickEditR{
+	background-color : transparent;
+	color : #fff;
+	border : none;
+	font-size : 20px;
+}
+
+#friendlist>.frm_friendlist>.friend_info_list>.friend_info>.btnFriendDelete{
+	background-color : transparent;
+	border : none;
+	color : #f00;
+	font-size : 20px;
+	font-weight: bold;
+}
+
+/*--------------------------FAQ----------------------------*/
+
+#FAQ{
+	box-sizing : border-box;
+	color : #000;
+	padding : 40px;
+}
+
+#FAQ>.frm_FAQ>.back{
+	color : #fff;
+	border : none;
+	background-color : transparent;
+	font-size : 60px;
+	margin : 20px;
+	margin-bottom : 0;
+}
+
+#FAQ>.frm_FAQ>h1{
+	margin : 0;
+	color : #fff;
+	display : inline-block;
+}
+
+#FAQ>.frm_FAQ>h2{
+	margin-top : 0;
+	margin-left : 150px;
+	color : #fff;
+}
+
+#FAQ>.frm_FAQ>.FAQ_frame{
+	display : grid;
+	grid-template-columns : 1fr 3fr;
+	border-radius : 10px;
+	background-color : #fff;
+	width : 1200px;
+	box-sizing : border-box;
+	margin-left : 150px;
+	padding-left : 20px;
+	height : 530px;
+}
+
+#FAQ>.frm_FAQ>.FAQ_frame>.FAQ_category{
+	display : inline-block;
+	height : 100%;
+	overflow : auto;
+	padding-right : 10px;
+	box-sizing : border-box;
+}
+
+#FAQ>.frm_FAQ>.FAQ_frame>.FAQ_category>.FAQ_categories{
+	display : inline-block;
+	width : 100%;
+	height : 60px;
+	text-align : center;
+	margin-bottom : 15px;
+}
+
+#FAQ>.frm_FAQ>.FAQ_frame>.FAQ_category>.FAQ_categories>.btnFAQCategory{
+	width : 100%;
+	height : 100%;
+	background-color : #eee;
+	border : none;
+	font-size : 20px;
+	font-weight : 550;
+}
+
+#FAQ>.frm_FAQ>.FAQ_frame>.FAQ_category>.FAQ_categories>.btnFAQCategory:hover{
+	background-color : #E4373C;
+	color : #fff;
+}
+
+#FAQ>.frm_FAQ>.FAQ_frame>.FAQ_list{
+	display : inline-block;
+	box-sizing : border-box;
+	padding-left : 40px;
+	padding-top : 20px;
+	padding-right : 160px;
+	overflow : auto;
+	position : relative;
+}
+
+#FAQ>.frm_FAQ>.FAQ_frame>.FAQ_list>h2{
+	margin-left : 40px;
+	margin-top : 0;
+}
+
+#FAQ>.frm_FAQ>.FAQ_frame>.FAQ_list>.FAQ_title{
+	display : inline-block;
+	width : 100%;
+	height : 30px;
+	margin-left : 20px;
+	margin-top : 10px;
+}
+
+#FAQ>.frm_FAQ>.FAQ_frame>.FAQ_list>.FAQ_title>.btnFAQSelect{
+	background-color : #fff;
+	border : none;
+	width : 100%;
+	height : 100%;
+	text-align : left;
+	font-size : 18px;
+}
+
+#FAQ>.frm_FAQ>.FAQ_frame>.FAQ_list>.FAQ_title>.btnFAQSelect:hover{
+	text-decoration : underline;
+}
+
+#FAQ>.frm_FAQ>.FAQ_frame>.FAQ_list>.FAQ_paging{
+	position : absolute;
+	width : 95%;
+	text-align : center;
+	bottom : 10px;
+	margin-top : 10px;
+}
+
+#FAQ>.frm_FAQ>.FAQ_frame>.FAQ_list>.FAQ_paging>button{
+	background-color : #fff;
+	border : none;
+	font-size : 25px;
+}
+
+#FAQ>.frm_FAQ>.FAQ_frame>.FAQ_list>.FAQ_paging>button:hover{color : #E4373C;}
+
+#FAQ>.frm_FAQ>.gomunylist{
+	width : 100%;
+	margin : 20px 0;
+}
+
+
+#FAQ>.frm_FAQ>.FAQ_frame>.FAQ_view{
+	display : inline-block;
+	box-sizing : border-box;
+	padding-left : 40px;
+	padding-top : 20px;
+	padding-right : 160px;
+	overflow : auto;
+}
+
+#FAQ>.frm_FAQ>.FAQ_frame>.FAQ_view>.back{
+	border : none;
+	display : inline-block;
+	background-color : transparent;
+	font-size : 30px;
+}
+
+#FAQ>.frm_FAQ>.FAQ_frame>.FAQ_view>.back:hover{color : #E4373C;}
+
+#FAQ>.frm_FAQ>.FAQ_frame>.FAQ_view>label{
+	display : inline-block;
+	margin : 10px;
+	margin-left : 30px;
+}
+
+#FAQ>.frm_FAQ>.FAQ_frame>.FAQ_view>input[type=text]{
+	font-size : 18px;
+	border : none;
+	border-bottom : 1px solid #000;
+	box-sizing : border-box;
+	padding-left : 10px;
+	width : 400px;
+}
+
+#FAQ>.frm_FAQ>.FAQ_frame>.FAQ_view>.fDoc{
+	resize : none;
+	width : 99%;
+	height : 85%;
+	overflow : auto;
+	box-sizing : border-box;
+	padding : 20px;
+	font-size : 18px;
+}
+
+
+#FAQ>.frm_FAQ>.gomunylist>button{
+	background-color : #12141E;
+	border : none;
+	color : #fff;
+	font-size : 20px;
+	margin-left : 1080px;
+	width : 275px;
+}
+
+#FAQ>.frm_FAQ>.gomunylist>button:hover{
+	text-decoration : underline;
+}
+
+/*--------------------------munylist----------------------------*/
+
+#munylist{
+	box-sizing : border-box;
+	padding : 40px;
+}
+
+#munylist>.frm_munylist>.back{
+	color : #fff;
+	border : none;
+	background-color : transparent;
+	font-size : 60px;
+	margin : 20px;
+	margin-bottom : 0;
+}
+
+#munylist>.frm_munylist>h1{
+	display : inline-block;
+	margin-left : 380px;
+	margin-bottom : 0;
+}
+
+#munylist>.frm_munylist>.munylist_frame{
+	position : relative;
+	color : #000;
+	background-color : #fff;
+	margin : 10px auto;
+	margin-top : 30px;
+	width : 750px;
+	border : none;
+	border-radius : 15px;
+	min-height : 565px;
+	box-sizing : border-box;
+	padding : 20px;
+}
+
+#munylist>.frm_munylist>.munylist_frame>.munylist_title{
+	height : 35px;
+	border-bottom : 3px solid #000;
+	margin-bottom : 30px;
+	padding-left : 10px;
+	font-size : 25px;
+	cursor : default;
+}
+
+#munylist>.frm_munylist>.munylist_frame>.munylist_item{
+	height : 30px;
+	border-bottom : 1px solid #ccc;
+	margin-bottom : 10px;
+	padding-left : 10px;
+	cursor : pointer;
+}
+
+#munylist>.frm_munylist>.munylist_frame>.munylist_item:hover{
+	color : #E4373C;
+	font-weight : bold;
+}
+
+#munylist>.frm_munylist>.munylist_frame span{
+	display : inline-block;
+	font-size : 20px;
+}
+
+#munylist>.frm_munylist>.munylist_frame .uName{width : 140px; text-overflow : ellipsis;}
+#munylist>.frm_munylist>.munylist_frame .mTitle{width : 345px; text-overflow : ellipsis;}
+#munylist>.frm_munylist>.munylist_frame .nal{width : 130px;;}
+#munylist>.frm_munylist>.munylist_frame .rSno{width : 56px;text-align:center;}
+
+#munylist>.frm_munylist>.gomuny{
+	width : 750px;
+	margin : 10px auto;
+}
+
+#munylist>.frm_munylist>.gomuny>button{
+	background-color : #12141E;
+	color : #fff;
+	margin-left : 530px;
+	font-size : 25px;
+	border : none;
+}
+
+#munylist>.frm_munylist>.gomuny>button:hover{
+	text-decoration : underline;
+}
+
+#munylist>.frm_munylist>.munylist_frame>.munylist_paging{
+	width : 95%;
+	position : absolute;
+	margin-top : 20px;
+	text-align : center;
+	bottom : 20px;
+}
+
+#munylist>.frm_munylist>.munylist_frame>.munylist_paging>button{
+	background-color : transparent;
+	border : none;
+	font-size : 25px;
+}
+
+#munylist>.frm_munylist>.munylist_frame>.munylist_paging>button:hover{
+	color : #E4373C;
+}
+
+/*--------------------------munylist_detail----------------------------*/
+
+#munylist_detail{
+	box-sizing : border-box;
+	color : #000;
+	padding : 50px 20px;
+	overflow : auto;
+}
+
+#munylist_detail>.frm_munylist_detail>.back{
+	color : #fff;
+	border : none;
+	background-color : transparent;
+	font-size : 60px;
+	margin : 20px;
+	margin-bottom : 0;
+}
+
+#munylist_detail>.frm_munylist_detail>.munylist_detail_frame{
+	margin : 10px auto;
+	width : 900px;
+	border : 1px solid #fff;
+	border-radius : 15px;
+	min-height : 700px;
+	box-sizing : border-box;
+	padding : 0 40px;
+}
+
+#munylist_detail>.frm_munylist_detail>.munylist_detail_frame>h1{
+	margin-bottom : 50px;
+	color : #fff;
+}
+
+#munylist_detail>.frm_munylist_detail>.munylist_detail_frame>label{
+	display : inline-block;
+	width : 50px;
+	margin-left : 40px;
+	color : #fff;
+}
+
+#munylist_detail>.frm_munylist_detail>.munylist_detail_frame>span{
+	display : inline-block;
+	border-bottom : 1px solid #fff;
+	height : 28px;
+	margin : 0;
+	color : #fff;
+	box-sizing : border-box;
+	padding : 0 10px;
+	font-size : 20px;
+	min-width : 20px;
+}
+
+#munylist_detail>.frm_munylist_detail>.munylist_detail_frame>.t{
+	border : none;
+	margin-right : 10px;
+	width : 80px;
+}
+
+
+#munylist_detail>.frm_munylist_detail>.munylist_detail_frame>.muny_doc{
+	margin-top : 10px;
+	width : 100%;
+	min-height : 340px;
+	border-radius : 5px;
+	resize : none;
+	box-sizing : border-box;
+	padding : 20px;
+	font-size : 18px;
+}
+
+#munylist_detail>.frm_munylist_detail>.munylist_detail_frame>button{
+	background-color : #E4373C;
+	color : #fff;
+	border : 1px solid #666;
+	border-radius : 5px;
+	width : 80px;
+	height : 35px;
+	margin-left : 50px;
+	margin-top : 30px;
+	font-size : 15px;
+}
+
+#munylist_detail>.frm_munylist_detail>.munylist_detail_frame>.btnMunyConfirm{
+	background-color : #55ca;
+	color : #fff;
+	margin-left : 600px;
+}
+
+/*--------------------------muny----------------------------*/
+
+#muny{
+	box-sizing : border-box;
+	color : #000;
+	padding : 0 20px;
+	padding-bottom : 50px;
+	overflow : auto;
+}
+
+#muny>.frm_muny>.back{
+	color : #fff;
+	border : none;
+	background-color : transparent;
+	font-size : 60px;
+	margin : 20px;
+	margin-bottom : 0;
+}
+
+#muny>.frm_muny>.muny_frame{
+	position : relative;
+	margin : 10px auto;
+	width : 900px;
+	border : 1px solid #fff;
+	border-radius : 15px;
+	min-height : 700px;
+	box-sizing : border-box;
+	padding : 0 40px;
+}
+
+#muny>.frm_muny>.muny_frame>h1{
+	margin-bottom : 50px;
+	color : #fff;
+}
+
+#muny>.frm_muny>.muny_frame>label{
+	display : inline-block;
+	width : 42px;
+	margin-left : 40px;
+	color : #fff;
+	margin-bottom : 10px;
+}
+
+#muny>.frm_muny>.muny_frame>button{
+	position : absolute;
+	background-color : #55ca;
+	color : #fff;
+	border : 1px solid #666;
+	border-radius : 5px;
+	width : 80px;
+	height : 35px;
+	font-size : 15px;
+}
+
+#muny>.frm_muny>.muny_frame>.muny_error{
+	display : none;
+	position : absolute;
+	right : 50px;
+	color : #f00;
+	font-size : 20px;
+	text-align : right;
+	font-weight : bold;
+}
+
+#muny>.frm_muny>.muny_frame>.btnMunyR{right : 200px;}
+#muny>.frm_muny>.muny_frame>.btnMunyCan{right : 50px;}
+
+
+@keyframes spinner {
+  to {transform: rotate(360deg);}
+}
+
+.spinner:before {
+  content: '';
+  z-index:999;
+  box-sizing: border-box;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 80px;
+  height: 80px;
+  margin-top: -10px;
+  margin-left: -10px;
+  border-radius: 50%;
+  border: 2px solid #ccc;
+  border-top-color: #000;
+  animation: spinner .6s linear infinite;
+}
+
+/*--------------------------ask----------------------------*/
+
+#ask{
+	box-sizing : border-box;
+	color : #fff;
+	padding : 40px;
+}
+
+#ask>.frm_ask>.back{
+	color : #fff;
+	border : none;
+	background-color : transparent;
+	font-size : 60px;
+	margin : 20px;
+	margin-bottom : 0;
+}
+
+#ask>.frm_ask>.ask_frame{
+	background-color : #002;
+	margin : 10px auto;
+	width : 600px;
+	border : 1px solid #fff;
+	border-radius : 15px;
+	min-height : 440px;
+	box-sizing : border-box;
+	padding-left : 40px;
+	padding-top : 10px;
+}
+
+#ask>.frm_ask>.ask_frame>h1{margin-bottom : 40px;}
+
+#ask>.frm_ask>.ask_frame>label{
+	display : inline-block;
+	width : 170px;
+	font-size : 23px;
+	margin-left : 40px;
+	margin-bottom : 18px;
+}
+
+#ask>.frm_ask>.ask_frame>input[type=text],
+#ask>.frm_ask>.ask_frame>input[type=month]{
+	border : none;
+	border-bottom : 2px solid #fff;
+	background-color : transparent;
+	color : #fff;
+	height : 30px;
+	width : 250px;
+	font-size : 20px;
+}
+
+#ask>.frm_ask>.ask_frame>input[type=month]::-webkit-calendar-picker-indicator{
+	background-color : #fff;
+	border-radius : 5px;
+}
+
+#ask>.frm_ask>.ask_frame>button{
+	background-color : #55ca;
+	color : #fff;
+	border : 1px solid #666;
+	border-radius : 5px;
+	width : 70px;
+	height : 35px;
+	margin-left : 30px;
+	margin-top : 50px;
+	font-size : 15px;
+}
+
+#ask>.frm_ask>.ask_frame>.btnAskR{
+	margin-left : 300px;
+}
+
+/*--------------------------signout----------------------------*/
+
+#signout{
+	background-color : #12141E;
+	box-sizing : border-box;
+	color : #fff;
+	padding : 40px;
+}
+
+#signout>.frm_signout>.back{
+	color : #fff;
+	border : none;
+	background-color : transparent;
+	font-size : 60px;
+	margin : 20px;
+	margin-bottom : 0;
+}
+
+#signout>.frm_signout>.signout_frame{
+	position : relative;
+	background-color : #002;
+	margin : 10px auto;
+	width : 600px;
+	border : 1px solid #fff;
+	border-radius : 15px;
+	min-height : 650px;
+	box-sizing : border-box;
+	padding : 0 40px;
+	padding-top : 10px;
+}
+
+#signout>.frm_signout>.signout_frame>h2{margin : 5px 10px;}
+
+#signout>.frm_signout>.signout_frame>h4{
+	color : #d00;
+	margin : 0;
+}
+
+#signout>.frm_signout>.signout_frame>.h4first{
+	color : #fff;
+	margin-top : 20px;
+	margin-bottom : 5px;
+}
+
+#signout>.frm_signout>.signout_frame>.h4second{
+	color : #fff;
+	margin-bottom : 20px;
+}
+
+#signout>.frm_signout>.signout_frame>.signout_error{
+	display : none;
+	margin-left : 20px;
+	width : 250px;
+	text-align : right;
+	color : #f00;
+	font-size : 18px;
+	font-weight : bold;
+}
+
+#signout>.frm_signout>.signout_frame>label{
+	display : inline-block;
+	margin-bottom : 5px;
+}
+
+#signout>.frm_signout>.signout_frame>input[type=text]{
+	margin-bottom : 30px;
+}
+
+#signout>.frm_signout>.signout_frame>.h4third{
+	color : #fff;
+	margin-top : 40px;
+	margin-left : 280px;
+}
+
+#signout>.frm_signout>.signout_frame>input[type=password]{
+	position : absolute;
+	right : 100px;
+	height : 20px;
+	margin-top : 2px;
+	width : 170px;
+	font-size : 25px;
+}
+
+#signout>.frm_signout>.signout_frame>.btnSignout{
+	position : absolute;
+	right : 10px;
+	width : 80px;
+	height : 30px;
+	color : #fff;
+	background-color : #d00;
+	border : none;
+	border-radius : 10px;
+}
+
+#signout>.frm_signout>.signout_frame>.btnSignoutCancel{
+	width : 80px;
+	height : 30px;
+	color : #fff;
+	background-color : #55ca;
+	border : none;
+	border-radius : 10px;
+	margin-left : 200px;
+	margin-top : 20px;
+}
+

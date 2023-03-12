@@ -1,0 +1,260 @@
+@charset "UTF-8";
+
+body{
+	min-width : 1080px;
+	margin : 0;
+	background : #0c111b;
+}
+
+body *::-webkit-scrollbar {
+	display : none;
+}
+
+body a{
+	text-decoration : none;
+	color : #fff;
+	cursor : pointer;
+}
+
+body button{
+	cursor : pointer;
+}
+
+#header{
+	position : fixed;
+	min-width : 1080px;
+	width : 100%;
+	background-color : #000;
+	color : #fff;
+	height : 70px;
+	z-index : 1;
+}
+
+#header>.frm_header>.logo{
+	display : inline-block;
+	box-sizing : border-box;
+	padding-left : 50px;
+	width : 100px;
+	height : 100px;
+	margin-top : 5px;
+}
+
+#header>.frm_header img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+#header>.frm_header>.first-header{
+	display : inline-block;
+	list-style : none;
+}
+
+#header>.frm_header>.first-header>li{
+	float : left;
+	padding-left : 30px;
+	font-size : 20px;
+}
+
+#header>.frm_header>.first-header>li>button{
+	background-color : #000;
+	font-size : 20px;
+	color : #fff;
+}
+
+#header>.frm_header>.toggle-categories{
+	display : inline-block;
+	position : fixed;
+	left : 0px;
+	top : 70px;
+	background-color : #49050b;
+	width : 70px;
+	height : 35px;
+	z-index : 1;
+	color : #fff;
+	text-align : center;
+	font-size : 35px;
+	border-radius : 0 0 15px 15px;
+	border : none;
+}
+
+#header>.frm_header>.categories{
+	position : fixed;
+	left : 0px;
+	top : 70px;
+	background-color : #000;
+	border-right : 2px solid #ddd;
+	border-bottom : 2px solid #ddd;
+	width : 280px;
+	height : 570px;
+	padding-left : 10px;
+	box-sizing : border-box;
+	border-radius : 0 0 10px 0;
+	text-align : left;
+	overflow : auto;
+}
+#header>.frm_header>.categories>h1{
+	box-sizing : border-box;
+	margin : 0;
+	padding-left : 70px;
+}
+
+#header>.frm_header>.categories>button{
+	background-color : #000;
+	margin-left : 50px;
+	font-size : 20px;
+	color : #ccc;
+	margin-bottom : 6px;
+	width : 140px;
+	text-align : left;
+}
+
+#header>.frm_header>.second-header{
+	display : inline-block;
+	float : right;
+}
+
+#header>.frm_header>.second-header>.textSearch{
+	background-color : #000;
+	color : #fff;
+	border : none;
+	border-bottom : 3px solid #fff;
+	width : 300px;
+	height : 40px;
+	font-size : 20px;
+	padding-left : 20px;
+	box-sizing : border-box;
+}
+
+#header>.frm_header>.second-header>#btnSearch{
+	background-color : #000;
+	color : #fff;
+	font-size : 25px;
+	margin : 0;
+	padding : 0;
+}
+
+#header>.frm_header>.second-header>#btnLogin{
+	background-color : #12141E;
+	color : #fff;
+	width : 110px;
+	height : 40px;
+	margin : 15px 30px;
+	font-size : 22px;
+	border : 1px solid #bbb;
+	border-radius : 10px;
+}
+
+#header>.frm_header>.second-header>#btnAccount,
+#header>.frm_header>.second-header>#btnGwan{
+	display : inline-block;
+	background-color : #000;
+	color : #fff;
+	font-size : 50px;
+	margin-right : 15px;
+}
+
+#header>.frm_header>.second-header>.account,
+#header>.frm_header>.second-header>.gwan{
+	position : fixed;
+	right : 0px;
+	top : 70px;
+	background-color : #000;
+	border-left : 2px solid #ddd;
+	border-bottom : 2px solid #ddd;
+	width : 220px;
+	height : 250px;
+	padding : 10px;
+	padding-right : 30px;
+	box-sizing : border-box;
+	border-radius : 0 0 0 10px;
+	text-align : right;
+}
+
+#header>.frm_header>.second-header>.account>button,
+#header>.frm_header>.second-header>.gwan>button{
+	background-color : #000;
+	color : #fff;
+	font-size : 18px;
+	margin-top : 10px;
+	border-bottom : 1px ridge #eee6;
+	padding-bottom : 5px;
+	box-sizing : border-box;
+}
+
+
+/*-------------------------------- Section --------------------------------*/
+
+#section{
+	background-color : #12141E;
+	min-height : 500px;
+	color : #fff;
+	padding : 0 40px;
+	padding-top : 60px;
+	overflow-x : hidden;
+}
+
+#section>.section-index{
+	min-height : 800px;
+}
+
+#section>.section-index>.index-main{
+	margin-top : 50px;
+	min-width : 1080px;
+	height : 440px;
+	overflow : hidden;
+}
+
+#section>.section-index>.index-main>img{
+	width : 100%;
+	height : 100%;
+	border-radius : 10px;
+}
+
+#section>.section-index>.index-hot{
+	min-width : 1080px;
+	overflow : hidden;
+}
+
+#section>.section-index>.index-hot>h2{
+	width : 500px;
+}
+
+/*-------------------------------- Footer --------------------------------*/
+
+#footer{
+	background-color : #000;
+	color : #fff;
+	height : 220px;
+	text-align : center;
+}
+
+#footer>.logo{
+	margin : 20px 0;
+	display : inline-block;
+	width : 60px;
+	height : 60px;
+}
+
+#footer img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+#footer>.informs>button{
+	background-color : #000;
+	color : #ccc;
+	font-size : 15px;
+	margin : 15px;
+	margin-bottom : 10px;
+}
+
+#footer>.about>div{
+	display : inline-block;
+	color : #ccc;
+	font-size : 12px;
+}
+
+#footer>.about>div>span{
+	display : inline-block;
+	margin-left : 15px;
+}

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace='com.prec.mybatis.MypageMapper' >
+
+	<select id='FAQTotSize' parameterType='String' resultType='Integer'>
+		select count(sno) totSize from FAQ
+		where fCat like '%${_parameter}%'
+	</select>
+	
+	<select id='MunyTotSize' parameterType='String' resultType='Integer'>
+		select count(num) totSize from muny
+		where email=#{_parameter}
+	</select>
+	
+	<select id='mylistWishlist' parameterType='ConsumerVo' resultType='ConsumerVo'>
+		select sno,m.title,m.serial,watch,list,poster 
+		from mylist m join video v on m.serial = v.serial
+		where email = #{email} and list = "찜목록" order by sno desc
+	</select>
+	
+	<select id='mylistVaclist' parameterType='ConsumerVo' resultType='ConsumerVo'>
+		select sno,m.title,m.serial,watch,list,poster 
+		from mylist m join video v on m.serial = v.serial
+		where email = #{email} and list = "방학 때 볼거" order by sno desc
+	</select>
+	
+	<select id='friendlist' parameterType='String' resultType='FriendVo'>
+		select sno,fEmail,fNick,fName from friend where email=#{_parameter}
+		order by sno desc
+	</select>
+	
+	<!-- ==================================================================== -->
+	<select id='friendName' parameterType='String' resultType='String'>
+		select uName from friend where email=#{_parameter}
+	</select>
+	<!-- ==================================================================== -->
+	
+	<select id='FAQCat' resultType='FAQVo'>
+		select distinct fCat from FAQ
+	</select>
+	
+	<select id='FAQSub' parameterType='MypagePage' resultType='FAQVo'>
+		select subject from FAQ where fCat like '%${fCat }%'
+		order by sno asc limit ${startNo},${listSize}
+	</select>
+	
+	<select id='FAQView' parameterType='String' resultType='FAQVo'>
+		select sno,fCat,subject,doc from FAQ where subject=#{_parameter}
+	</select>
+	
+	<select id='munylist' parameterType='MypagePage' resultType='MunyVo'>
+		select num,sno,rSno,email,uName,manager,mTitle,mDoc,nal
+		from muny where email=#{email} order by num desc
+		limit ${startNo}, ${listSize}
+	</select>
+	
+	<select id='munylistDetail' parameterType='Integer' resultType='MunyVo'>
+		select num,sno,rSno,email,uName,manager,mTitle,mDoc,nal
+		from muny where num=#{_parameter}
+	</select>
+	
+	<select id='munyuName' parameterType='String' resultType='String'>
+		select uName from user where email=#{_parameter}
+	</select>
+	
+	<select id='pwdChk' parameterType='ConsumerVo' resultType='Integer'>
+		select count(email) from user where email=#{email} and pwd=#{pwd}
+	</select>
+	
+	<insert id='friendInsertR' parameterType='FriendVo'>
+		insert into friend(email,fEmail,fNick,fName) 
+		values(#{email},#{fEmail},#{fNick},#{fName})
+	</insert>
+	
+	<insert id='munyR' parameterType='MunyVo'>
+		insert into muny(email,uName,mTitle,mDoc,nal)
+		values(#{email},#{uName},#{mTitle},#{mDoc},#{nal})
+	</insert>
+	
+	<insert id='askR' parameterType='AskVo'>
+		insert into ask(cTitle,cYear,cGenre,con,cId) 
+		values(#{cTitle},#{cYear},#{cGenre},#{con},#{cId})
+	</insert>
+	
+	<insert id='signoutReason' parameterType='SignoutVo'>
+		insert into signout(email,reason) values(#{email},#{reason})
+	</insert>
+
+	<update id='userModifyR' parameterType='ConsumerVo'>
+		update user set pwd=#{pwd}, phone=#{phone} where email=#{email}
+	</update>
+	
+	<update id='friendNickR' parameterType='FriendVo'>
+		update friend set fNick=#{fNick} where sno=#{sno} and email=#{email}
+	</update>
+	
+	<delete id='mylistDelete' parameterType='Integer'>
+		delete from mylist where sno = #{_parameter}
+	</delete>
+	
+	<delete id='friendDelete' parameterType='FriendVo'>
+		delete from friend where sno = #{sno} and email=#{email}
+	</delete>
+	
+	<delete id='munylistDelete' parameterType='Integer'>
+		delete from muny where num=#{_parameter}
+	</delete>
+	
+	<delete id='signoutR' parameterType='String'>
+		delete from user where email = #{_parameter}
+	</delete>
+	
+</mapper>

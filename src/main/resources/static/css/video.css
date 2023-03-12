@@ -1,0 +1,135 @@
+@charset "UTF-8";
+
+
+img {
+  max-width: 100%;
+}
+
+
+#video_search {
+  margin: 0;
+  padding: 0;
+}
+
+/*----------------SEARCH------------------*/
+#video_search .video_search_container{
+	width: 100%
+}
+#video_search .video_search_container .sub_search{
+	margin-top: 30px;
+	padding: 5px;
+	width: 100%;
+	text-align : center;
+}
+#video_search .video_search_container .sub_search .findStr{
+	margin: 2px auto;
+	background-color : transparent;
+	color : #fff;
+	border : none;
+	border-bottom : 3px solid #fff;
+	width : 500px;
+	height : 40px;
+	font-size : 20px;
+	padding-left : 20px;
+	box-sizing : border-box;
+}
+#video_search .video_search_container .sub_search .video_search{
+	background-color : #000;
+	font-size : 20px;
+	color : #fff;
+}
+
+/*----------------TAG CHECK------------------*/
+ #video_search .frm_rFind{
+	width: 640px;
+	height: 80px;
+	margin: 2px auto;
+}
+#video_search .frm_rFind .keyword{
+	margin-left: 10px;
+}
+#video_search .video_search_chk{
+	text-align: center;
+}
+#video_search .video_toggle{
+	text-align: center;
+}
+#video_search .tag_down, .tag_up{
+	border: none;
+	background-color: #141414;
+	color: #fff;
+}
+#video_search .video_toggle .tag_up{
+	display: none;
+}
+#video_search .video_search_chk{
+	display: none;
+	background-color: transparent;
+}
+#video_search .tags_filter{
+	margin: 1px auto;
+	width : 700px;
+	display : flex;
+	flex-wrap: wrap;
+}
+#video_search .tags_filter .chkbox{
+	width : 150px;
+	color: #fff;
+	border : 1px solid #fff;
+	text-align: left;
+	padding-left: 10px;
+}
+#video_search .tags_filter .chkbox div{
+	display : inline-block;
+	margin: 2px;
+}
+
+
+/* MAIN CONTIANER */
+#video_search .main_container {
+  padding: 30px;
+  display: flex;
+	flex-wrap: wrap;
+	text-align: center;
+}
+
+#video_search .main_container .item{
+	margin-top: 10px;
+	margin: 5px;
+}
+
+/*--------포스터 크기-------*/
+#video_search .main_container img{
+	width: 172px;
+	height: 246px;
+}
+#video_search .main_container img:hover {
+	transform: scale(1.4);
+}
+/* 24일추가*/
+/* video_list */
+#video_list{
+  margin: 0;
+  padding: 0;
+}
+#video_list h1{
+	margin-left: 35px;
+	margin-top: 50px;
+}
+#video_list .main_container {
+  padding: 30px;
+  display: flex;
+	flex-wrap: wrap;
+	text-align: center;
+}
+#video_list .main_container .item{
+	margin-top: 0;
+	margin: 5px;
+}
+#video_list .main_container img{
+	width: 172px;
+	height: 246px;
+}
+#video_list .main_container img:hover {
+	transform: scale(1.4);
+}

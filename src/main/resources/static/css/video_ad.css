@@ -1,0 +1,65 @@
+@charset "UTF-8";
+
+#video_ad{
+	border : none;
+	position : absolute;
+	right : 0;
+	width : 25%;
+	background-color : #000;
+	color : #fff;
+	height : inherit;
+	overflow : auto;
+}
+
+#video_ad>.frm_video_ad>h1{
+	margin-left : 20px;
+}
+
+#video_ad .ads_items>button{
+	display : block;
+	margin : 10px 50px;
+	border : none;
+	background-color : transparent;
+	color : #fff;
+	font-size : 23px;
+}
+
+#video_ad .ads_items{
+	display : block;
+}
+
+#video_ad .ads_items>div{
+	display : none;
+}
+
+#video_ad .ads_item>a{
+	text-decoration : none;
+}
+
+#video_ad .ads_item{
+	border-radius : 15px;
+	background-color : #fff;
+	width : 60%;
+	margin : 30px auto;
+	padding-bottom : 8px;
+}
+
+#video_ad .ads_item .ads_img{
+	display : block;
+	width : 100%;
+	text-align : center;
+}
+
+#video_ad .ads_item .ads_img>img{
+	width : 90%;
+}
+
+#video_ad .ads_item .ads_title{
+	color : #000;
+	display : block;
+	margin : 0 10px;
+	width : 90%;
+	min-height : 21px;
+	white-space: pre-wrap;
+	text-align : center;
+}

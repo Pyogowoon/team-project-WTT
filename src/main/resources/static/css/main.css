@@ -1,0 +1,243 @@
+
+@charset "UTF-8";
+
+
+
+#main>.frm_main>.user-main{
+   margin-top : 50px;
+   min-width : 80%;
+}
+
+
+#main>.frm_main>.user-main>img{
+   width : 100%;
+   height : width / 3.9;
+   border-radius : 10px;
+}
+
+#main>.frm_main>.user-hot{
+   min-width : 700px;
+  
+}
+#main>.frm_main>.user-hot2{
+   min-width : 700px;
+  
+}
+
+#main>.frm_main>h2{
+   width : 100%;
+}
+
+#main>.frm_main>.user-hot>.today{
+   display : flex;
+   box-sizing : border-box; 
+   height : 330px;
+  
+}
+#main>.frm_main>.user-hot2>.today2{
+   display : flex;
+   box-sizing : border-box; 
+   height : 330px;
+  
+}
+#main>.frm_main>.user-hot>.today>.item{
+   display : inline-block;
+   height : 280px;
+   margin-left : 22px;
+   margin-right : 30px;
+   width : 156px
+}
+
+#main>.frm_main>.user-hot2>.today2>.item2{
+   display : inline-block;
+   height : 280px;
+   margin-left : 22px;
+   margin-right : 30px;
+   width : 156px
+}
+
+#main>.frm_main>.user-hot>.today>.item>img{
+   height : 80%;
+}
+
+#main>.frm_main>.user-hot2>.today2>.item2>img{
+   height : 80%;
+}
+
+#main>.frm_main>.user-hot2>.today2>.item2>.item_title2{
+   display : inline-block;
+   text-align : center;
+   font-size : 20px;
+   width : 100%;
+   height : 54px;
+}
+
+#main>.frm_main>.user-hot2>.today2>.item2>.item_title2{
+   display : inline-block;
+   text-align : center;
+   font-size : 20px;
+   width : 100%;
+   height : 54px;
+}
+@media only screen and (min-width: 900px) {
+.item:hover {
+	   transform: scale(1.2);
+	 transition: all 0.8s ease-in-out;
+ 
+  }
+  .item:hover > video {
+  	width :300px;
+  	height : 240px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    	object-fit:fill;
+    
+  }
+}
+  /* 호버 실행시 설명 나오는 공간 */
+  .item:hover > .description {
+    display: block;
+   
+  
+  }
+
+  .description {
+  position: absolute;
+  display: none;
+  background-color: #272727;
+  width: var(--movie-width);
+  margin-top: -10px;
+  padding: 10px 0;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  width: 300px;
+  z-index : 0;
+	top : 210px;
+}
+.description__buttons-container {
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+}
+
+.description__text-container {
+  padding: 10px;
+  font-size : 15px;
+}
+
+.description__match {
+  color: green;
+}
+
+.description__rating {
+  outline: 1px solid white;
+  padding: 0 3px;
+  margin: 0 5px;
+}
+
+.description__button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border: 2px solid white;
+  text-align: center;
+  font-size: 8px;
+  margin-right: 5px;
+  border-radius: 100%;
+}
+
+.description__button:hover {
+  border-color: grey;
+  color: grey;
+  cursor: pointer;
+}
+
+.description__button:nth-of-type(5) {
+  margin-left: auto;
+  margin-right: 0;
+}
+#moveLeft {
+  left: 0;
+	height : 260px;
+  position : absolute;
+  background-color : black;
+  color : white;
+ z-index : 5;
+}
+#moveRight {
+  right: 0;
+  height : 260px;
+  position : absolute;
+  background-color : black;
+  color : white;
+  z-index : 5;
+ 
+}
+#moveLeft2 {
+  left: 0;
+	height : 260px;
+  position : absolute;
+  background-color : black;
+  color : white;
+}
+#moveRight2 {
+  right: 0;
+  height : 260px;
+  position : absolute;
+  background-color : black;
+  color : white;
+}
+
+video[poster]{
+	width : 156px;
+	height : 224px;
+}
+.poster > img{
+	width : 156px;
+	height : 224px;
+}
+
+#popup{
+ position: fixed;
+  display: none;
+  width: 60%;
+  height: 100%;
+  top: -50px;
+  left: 400px;
+  right: 0;
+  bottom: 0;
+  background-color: black;
+  z-index: 2;
+  cursor: pointer;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	color : white;
+	-ms-overflow-style: none; 
+    scrollbar-width: none; 
+}
+#popup::-webkit-scrollbar {
+    display: none; 
+}
+.mutebtn{
+	display : absolute;
+	margin : auto;
+	width : 900px;
+transform: translate(92%, -340%);
+opacity: 0.5;
+ cursor: pointer;
+
+}
+.unmute {
+	
+  background-image: url('../img/muted2.png');
+  background-size: cover;
+  width: 35px;
+  height: 32px;
+  cursor: pointer;
+}
+#sangse{
+	
+margin-left : auto;
+}

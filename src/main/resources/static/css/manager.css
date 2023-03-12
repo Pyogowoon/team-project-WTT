@@ -1,0 +1,690 @@
+@charset "UTF-8";
+
+#manager *::-webkit-scrollbar {
+	display : block;
+}
+
+#manager{
+	display : flex;
+	
+}
+#section{
+	padding : 0;
+	margin : 0;
+	padding-top : 60px;
+	overflow: visible;
+}
+#manager>#left{
+	background-color : #bbb;
+	--flex-basis: 200px;
+	min-height : 600px;
+	padding : 10px;
+	padding-top : 30px;
+	padding-right:0;
+	
+}
+#manager>#left>.manager_menu{
+	padding : 10px;
+	padding-right:0;
+	line-height : 1.4em;
+	flex : 0;
+}
+#manager>#left>.manager_menu>div{
+	margin-top : 5px;
+	border-bottom : 2px solid #333;
+	width : 160px;
+}
+#manager>#left>.manager_menu>div:hover{
+	cursor: pointer;
+	background-color : #ccc;
+}
+#manager>#left>.manager_menu a{
+	text-decoration: none;
+	color : #000;
+}
+#manager>#right{
+	--background-color : #cfc;
+	--flex-basis : 500px;	
+	flex : 1;
+}
+/*-----------영상/시리즈관리------------------*/
+#m_video{
+	margin-left : 10px;
+	margin-top : 10px;
+}
+#m_video>h1{
+	text-align : center;
+}
+#m_video .searchTop{
+	display : flex;
+}
+#m_video .searchTop>.addButton{
+	flex : 1;
+	
+}
+#m_video .searchTop>.searchZone{
+	flex: 0;
+	text-align : right;
+	margin-right : 15px;
+	border-bottom : 1px solid #000;
+	flex-basis: 200px;
+}
+#m_video .searchTop>.searchZone>.findStr{
+	border : 0;
+}
+#m_video #m_list{
+	min-width : 1150px;
+}
+#m_video #m_list>#title{
+	display : flex;
+	background-color : #bbb;
+	margin-top : 10px;
+	padding : 10px 0;
+}
+#m_video #m_list>#items .item{
+	display : flex;
+	padding : 5px 0;
+}
+#m_video #m_list>#items .clickhere{
+	flex:1;
+	display : flex;
+}
+#m_video #m_list .chk{ 
+	flex-basis : 40px; 
+	text-align : center;
+}
+#m_video #m_list .serial{ 
+	flex-basis : 100px; 
+	text-align : center;
+}
+#m_video #m_list .genre{ flex-basis : 100px; }
+#m_video #m_list .vTitle{ 
+	flex-basis : 300px;
+	flex : 1; 
+	text-align : center;
+}
+#m_video #m_list .cat{ flex-basis : 150px; }
+#m_video #m_list .pd{ flex-basis : 100px; }
+#m_video #m_list .country{ flex-basis : 100px; }
+#m_video #m_list .year{ 
+	flex-basis : 200px;
+	--flex : 0;
+	text-align : right;
+	padding-right: 15px;
+}
+#m_video #m_list>#items>.item{
+	border-bottom : 1px solid #bbb;
+}
+
+#m_video #btns{
+	margin-top : 10px;
+	text-align : center;
+}
+#m_video #btns button {
+	height : 30px;
+}
+#m_video #btns .btnLtlt{
+	border-radius : 8px 0 0 8px;
+	border : 1px solid #000;
+}
+#m_video #btns .btnGtgt{
+	border-radius : 0 8px 8px 0;
+	border : 1px solid #000;
+}
+/*-----------영상/시리즈 추가 ------------------*/
+#m_video_input{
+	margin : 10px;
+	width : 1000px;
+	margin : 10px auto;
+}
+#m_video_input #insert{
+	display : flex;
+}
+#m_video_input #insert>#poster{
+	flex:0;
+}
+#m_video_input #insert>#videoInput1{
+	margin-left : 10px;
+	flex:1;
+}
+#m_video_input #insert>#videoInput2{
+	margin-left : 10px;
+	flex:1;
+}
+#m_video_input #insert label {
+	display : inline-block;
+	width : 80px;
+	text-align : right;
+	padding-right:5px;
+	margin : 5px 0;
+}
+#m_video_input #insert .set1{
+	text-align : left;
+	padding-left : 6px;
+}
+#m_video_input #insert .btnPoster { padding-left : 5px;}
+#m_video_input #insert .btnPoster button{
+	display : inline-block;
+	width : 265px;
+}
+#m_video_input #insert .btnTeaser { padding-left : 3px;}
+#m_video_input #insert .btnTeaser button{
+	display : inline-block;
+	width : 265px;
+}
+#m_video_input #insert .addHeng, #m_video_input #insert .deleteHeng{
+	display : inline-block;
+	margin-top : 10px;
+	margin-left : 3px;
+	width : 265px;
+	height : 50px;
+	
+}
+#m_video_input #line{
+	height : 200px;
+	overflow: auto;
+	background-color : #ccc;
+}
+#m_video_input #line .seCnt{
+	height : 60px;
+	border-bottom : 1px solid #000;
+	padding-top : 5px;
+	display : flex;
+}
+#m_video_input #line .seCnt label, #m_video_input #line .seCnt input {
+	display : inline-block;
+	width : 120px;
+	text-align : right;
+   height : 30px;
+}
+#m_video_input #line .seCnt input{
+	text-align:center;
+}
+#m_video_input #line .seCnt .hengNo{
+	margin : 10px;
+}
+#m_video_input #line .seCnt .cntInfo{
+	flex: 1;
+}
+#m_video_input #inbtns {
+	margin-top : 10px;
+	text-align : center;
+}
+#m_video_input #insert .btnDetailView{
+	padding-left : 3px;
+	margin-top : 10px;
+}
+#m_video_input #insert .btnDetailView button{
+	display : inline-block;
+	width : 258px;
+	height :40px;
+}
+#m_video_input #line .mbtn{
+	margin-right : 4px;
+	margin-top : 5px;
+	padding : 2px;
+}
+/*-----------영상 세부정보 관리------------------*/
+#m_detail{
+	margin-left : 10px;
+	margin-top : 10px;
+}
+#m_detail>h1{
+	text-align : center;
+}
+#m_detail .searchTop{
+	display : flex;
+}
+#m_detail .searchTop>.addButton{
+	flex : 1;
+	
+}
+#m_detail .searchTop>.searchZone{
+	flex: 0;
+	text-align : right;
+	margin-right : 15px;
+	border-bottom : 1px solid #000;
+	flex-basis: 200px;
+}
+#m_detail .searchTop>.searchZone>.findStr{
+	border : 0;
+}
+#m_detail #m_list{
+	min-width : 1150px;
+}
+#m_detail #m_list>#title{
+	display : flex;
+	background-color : #ccc;
+	margin-top : 10px;
+	padding : 10px 0;
+}
+#m_detail #m_list>#items .item{
+	display : flex;
+	padding : 5px 0;
+}
+#m_detail #m_list>#items .clickhere{
+	flex:1;
+	display : flex;
+}
+#m_detail #m_list .chk{ 
+	flex-basis : 40px; 
+	text-align : center;
+}
+#m_detail #m_list .serial{ 
+	flex-basis : 100px; 
+	text-align : center;
+}
+#m_detail #m_list .dSeason{ flex-basis : 100px; }
+#m_detail #m_list .dEp{ flex-basis : 100px; }
+#m_detail #m_list .dPoster{ 
+	flex-basis : 150px; 
+	overflow: hidden;
+	white-space:nowrap;
+	text-overflow: ellipsis;
+}
+#m_detail #m_list .dEptitle{ 
+	flex-basis : 300px;
+	flex : 1; 
+	text-align : center;
+}
+#m_detail #m_list .dVid{ 
+	flex-basis : 100px; 
+	width : 100px;
+	overflow: hidden;
+	white-space:nowrap;
+	text-overflow: ellipsis;
+}
+#m_detail #m_list .playTime{ 
+	flex-basis : 200px;
+	--flex : 0;
+	text-align : right;
+	padding-right: 15px;
+}
+#m_detail #m_list>#items>.item{
+	border-bottom : 1px solid #ccc;
+}
+#m_detail #btns{
+	margin-top : 10px;
+	text-align : center;
+}
+#m_detail #btns button {
+	height : 30px;
+}
+#m_detail #btns .btnLtlt{
+	border-radius : 8px 0 0 8px;
+	border : 1px solid #000;
+}
+#m_detail #btns .btnGtgt{
+	border-radius : 0 8px 8px 0;
+	border : 1px solid #000;
+}
+/*영상 세부정보 입력/수정창--------------*/
+#m_detail_input{
+	margin : 10px;
+	width : 1000px;
+	margin : 10px auto;
+}
+#m_detail_input #insert{
+	display : flex;
+}
+#m_detail_input #insert>#poster{
+	flex:0;
+}
+#m_detail_input #insert>#videoInput{
+	margin-left : 10px;
+	flex:1;
+}
+#m_detail_input #insert label {
+	display : inline-block;
+	width : 80px;
+	text-align : right;
+	padding-right:5px;
+	margin : 5px 0;
+}
+#m_detail_input #insert #videoInfo {
+	text-align : center;
+	padding-right : 90px;
+	position: relative;
+}
+#m_detail_input #insert #videoInfo>#searchV{
+	display : inline-block;
+	width : 60px;
+	height : 114px;
+	position: absolute;
+	top : 7px;
+	right : 140px;;
+}
+#m_detail_input #insert #videoInput #blank{
+	height : 115px;
+}
+#m_detail_input #insert #videoInput>#hengGwan{
+	text-align : center;
+}
+#m_detail_input #insert .addHeng, #m_detail_input #insert .deleteHeng{
+	display : inline-block;
+	margin-top : 10px;
+	margin-left : 3px;
+	width : 200px;
+	height : 50px;
+	
+}
+#m_detail_input #line{
+	height : 200px;
+	overflow: auto;
+	background-color : #ccc;
+}
+#m_detail_input #line .vDetail{
+	height : 80px;
+	border-bottom : 1px solid #000;
+	padding-top : 5px;
+	display : flex;
+}
+#m_detail_input #line .vDetail>.ePoster{
+	border-right : 1px solid #000;
+}
+#m_detail_input #line .vDetail>.vDetailInfo{
+	flex : 1;
+	padding-top : 10px;
+}
+
+#m_detail_input #line .vDetail label{
+	display : inline-block;
+	width : 110px;
+	text-align : right;
+   height : 30px;
+}
+#m_detail_input #line .vDetail>.vDetailInfo .dVidName{
+	width : 91px;
+}
+#m_detail_input #line .vDetail input{
+	display : inline-block;
+	width : 50px;
+	text-align:center;
+}
+#m_detail_input #line .vDetail .dPoster{
+	width : 200px;
+}
+#m_detail_input #line .vDetail .dVid{
+	width:200px;
+}
+#m_detail_input #line .vDetail .changeVid{
+	width:138px;
+}
+#m_detail_input #line .vDetail .dEptitle {
+	width : 150px;
+}
+#m_detail_input #line .vDetail .subBtn>div {
+	height : 18px;
+}
+#m_detail_input #line .vDetail .chkHeng>div{
+	height: 30px;
+}
+#m_detail_input #inbtns {
+	margin-top : 10px;
+	text-align : center;
+}
+#m_detail_input #line .modifyData .modifyV{
+	width : 75px;
+}
+/*-------------------------------------*/
+/*--------------광고정보 관리-----------------------*/
+
+#m_ad{
+	margin-left : 10px;
+	margin-top : 10px;
+}
+#m_ad>h1{
+	text-align : center;
+}
+#m_ad .searchTop{
+	display : flex;
+}
+#m_ad .searchTop>.filter{
+	margin-top:10px;
+	flex : 1;
+	
+}
+#m_ad .searchTop>.searchZone{
+	flex: 0;
+	text-align : right;
+	margin-right : 15px;
+	border-bottom : 1px solid #000;
+	flex-basis: 200px;
+}
+#m_ad .searchTop>.searchZone>.findStr{
+	border : 0;
+}
+#m_ad .searchTop>.align {
+	flex:0;
+}
+#m_ad .searchTop>.align>select {
+	padding : 3px;
+	text-align : center;
+	width : 120px;
+	height : 31px;
+	margin-right : 4px;
+}
+#m_ad #m_list{
+	min-width : 1100px;
+}
+#m_ad #m_list>#title{
+	display : flex;
+	background-color : #ccc;
+	margin-top : 10px;
+	padding : 10px 0;
+}
+#m_ad #m_list>#items .item{
+	display : flex;
+	padding : 5px 0;
+}
+#m_ad #m_list>#items .clickhere{
+	flex:1;
+	display : flex;
+}
+#m_ad #m_list .chk{ 
+	flex-basis : 40px; 
+	text-align : center;
+}
+#m_ad #m_list .dSno{ 
+	flex-basis : 70px; 
+	text-align : center;
+}
+#m_ad #m_list .title{ 
+	flex-basis : 100px; 
+	text-align : center;
+	overflow: hidden;
+	white-space:nowrap;
+	text-overflow: ellipsis;
+}
+#m_ad #m_list .dSeason{ flex-basis : 80px; text-align : center;}
+#m_ad #m_list .dEp{ flex-basis : 80px; text-align : center; }
+#m_ad #m_list .pCat{ 
+	flex-basis : 100px; 
+	text-align : center;
+}
+#m_ad #m_list .pName{ 
+	flex-basis : 100px; 
+	overflow: hidden;
+	white-space:nowrap;
+	text-overflow: ellipsis;
+	text-align : center;
+}
+#m_ad #m_list .pInfo{ 
+	flex-basis : 200px;
+	flex : 1; 
+	text-align : center;
+	overflow: hidden;
+	white-space:nowrap;
+	text-overflow: ellipsis;
+}
+#m_ad #m_list .pImg{ 
+	flex-basis : 100px; 
+	width : 100px;
+	overflow: hidden;
+	white-space:nowrap;
+	text-overflow: ellipsis;
+}
+#m_ad #m_list .url{ 
+	flex-basis : 100px;
+	width : 100px;
+	text-align : center;
+	padding-right: 15px;
+	overflow: hidden;
+	white-space:nowrap;
+	text-overflow: ellipsis;
+}
+#m_ad #m_list>#items>.item{
+	border-bottom : 1px solid #ccc;
+}
+#m_ad #btns{
+	margin-top : 10px;
+	text-align : center;
+}
+#m_ad #btns button {
+	height : 30px;
+}
+#m_ad #btns .btnLtlt{
+	border-radius : 8px 0 0 8px;
+	border : 1px solid #000;
+}
+#m_ad #btns .btnGtgt{
+	border-radius : 0 8px 8px 0;
+	border : 1px solid #000;
+}
+/*광고정보 입력 및 수정---------------*/
+#m_ad_input{
+	margin : 10px;
+	width : 1000px;
+	margin : 10px auto;
+}
+#m_ad_input #insert{
+	display : flex;
+}
+#m_ad_input #insert>#poster{
+	flex:0;
+}
+#m_ad_input #insert>#vDetailZone{
+	margin-left : 10px;
+	flex:1;
+}
+#m_ad_input #insert label {
+	display : inline-block;
+	width : 80px;
+	text-align : left;
+	padding-right:5px;
+	margin : 5px 0;
+}
+#m_ad_input #insert #vDetailInfo {
+	--text-align : center;
+	padding-left : 20px;
+	position: relative;
+}
+#m_ad_input #insert #vDetailInfo>#searchV{
+	display : inline-block;
+	width : 60px;
+	height : 114px;
+	position: absolute;
+	top : 61px;
+	right : 140px;;
+}
+#m_ad_input #insert #vDetailZone #blank{
+	height : 50px;
+}
+#m_ad_input #insert #vDetailZone>#hengGwan{
+	text-align : center;
+}
+#m_ad_input #insert .addHeng, #m_ad_input #insert .deleteHeng{
+	display : inline-block;
+	margin-top : 10px;
+	margin-left : 3px;
+	width : 200px;
+	height : 50px;
+	
+}
+#m_ad_input #line{
+	min-height : 200px;
+	max-height : 500px;
+	overflow: auto;
+	background-color : #ccc;
+}
+#m_ad_input #line .adZone{
+	height : 110px;
+	border-bottom : 1px solid #000;
+	padding-top : 5px;
+	display : flex;
+}
+#m_ad_input #line .adZone>.ePoster{
+	border-right : 1px solid #000;
+}
+#m_ad_input #line .adZone>.adInfo{
+	flex : 1;
+	padding-top : 10px;
+}
+
+#m_ad_input #line .adZone label{
+	display : inline-block;
+	width : 110px;
+	text-align : right;
+   height : 30px;
+}
+#m_ad_input #line .adZone>.adInfo .pNameN{
+	width : 91px;
+}
+
+#m_ad_input #line .adZone>.adInfo input{
+	display : inline-block;
+	width : 170px;
+	text-align:center;
+}
+#m_ad_input #line .adZone .subBtn>div{
+	height : 35px;
+}
+#m_ad_input #line .adZone .subBtn{
+	padding-right : 20px;
+}
+#m_ad_input #line .adZone>.adInfo .pTime{
+	width : 60px;
+}
+#m_ad_input #line .adZone>.adInfo .pTime{
+	width : 60px;
+}
+#m_ad_input #line .adZone>.adInfo .vpTime{
+	display : inline-block;
+	border : 1px solid #000;
+	text-align : center;
+	background-color : #fff;
+	width : 106px;
+}
+#m_ad_input #line .adZone>.adInfo .pActor{
+	width : 60px;
+}
+#m_ad_input #line .adZone>.adInfo .pCat{
+	width : 60px;
+}
+#m_ad_input #line .adZone>.adInfo .pUrl, #m_ad_input #line .adZone>.adInfo .pInfo{
+	width : 220px;
+}
+#m_ad_input #line .adZone input[type='file']{
+	width : 200px;
+}
+#m_ad_input #line .adZone .chkHeng>div{
+	height: 45px;
+}
+#m_ad_input #line .adZone .chkHeng {
+	width : 30px;
+}
+#m_ad_input #inbtns {
+	margin-top : 10px;
+	text-align : center;
+}
+
+
+
+
+
+
+
+
+
+
+/*-------------------------------------*/
